@@ -1,0 +1,2 @@
+The game scripts and content are licensed under Creative Commons Attribution-NonCommercial-ShareAlike 4.0. Creative Commons.
+Look here if you would like to actually read this license you hecking nerd: http://creativecommons.org/licenses/by-nc-sa/3.0/us/
