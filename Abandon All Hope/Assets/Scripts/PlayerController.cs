@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
+    const int LEFT = -1, RIGHT = 1;
 
     public float speed = 10;
     public float jumpspeed = 100;
@@ -11,7 +12,7 @@ public class PlayerController : MonoBehaviour {
 	public float bulletSpeed = 0.5f;
 
     private bool grounded = false;
-	private int facingRight = 1;
+	private int facing = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -26,12 +27,12 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKey(KeyCode.LeftArrow))
         {
             body.AddForce(Vector2.left * speed);
-			facingRight = -1;
+			facing = LEFT;
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             body.AddForce(Vector2.right * speed);
-			facingRight = 1;
+			facing = RIGHT;
         }
         if (grounded && Input.GetKeyDown(KeyCode.UpArrow))
         {
@@ -39,8 +40,8 @@ public class PlayerController : MonoBehaviour {
         }
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			BulletMovement bullet2 = Instantiate(bullet, transform.position + new Vector3(.7f * facingRight, .1f), Quaternion.identity);
-			bullet2.velocity = new Vector2(bulletSpeed * facingRight, 0);
+			BulletMovement bullet2 = Instantiate(bullet, transform.position + new Vector3(.7f * facing, .1f), Quaternion.identity);
+			bullet2.velocity = new Vector2(bulletSpeed * facing, 0);
 		}	
 	}
 
