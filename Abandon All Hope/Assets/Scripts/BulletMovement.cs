@@ -29,7 +29,9 @@ public class BulletMovement : MonoBehaviour {
 	void OnCollisionEnter2D (Collision2D other)
 	{
 		// TODO: Check tag
-		//Destroy (this.gameObject);
+		Destroy (this.gameObject);
 		print("hi");
 	}
+
+    
 }
