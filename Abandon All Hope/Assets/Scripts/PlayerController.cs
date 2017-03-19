@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class KeyboardMovement : MonoBehaviour {
+public class PlayerController : MonoBehaviour {
 
     public float speed = 10;
     public float jumpspeed = 100;
