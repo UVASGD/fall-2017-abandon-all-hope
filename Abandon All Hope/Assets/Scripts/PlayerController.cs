@@ -7,22 +7,22 @@ public class PlayerController : MonoBehaviour {
 
     public float speed = 40;
     public float jumpspeed = 1000;
+    public int maxhealth = 10;
 
 	public BulletMovement bullet;
 	public float bulletSpeed = 0.5f;
 
     private bool grounded = false;
 	private int facing = 1;
+    private int health;
 
 	// Use this for initialization
 	void Start () {
-		
+        health = maxhealth;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        CheckGrounded();
-
         Rigidbody2D body = GetComponent<Rigidbody2D>();
 		if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
             body.AddForce(Vector2.right * speed);
 			facing = RIGHT;
         }
-        if (grounded && Input.GetKeyDown(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && CheckGrounded())
         {
             body.AddForce(Vector2.up * jumpspeed);
         }
@@ -47,12 +47,26 @@ public class PlayerController : MonoBehaviour {
         sprite.flipX = facing == LEFT;
     }
 
-    private void CheckGrounded()
+    private bool CheckGrounded()
     {
-        Bounds bounds = GetComponent<Collider2D>().bounds;
-        RaycastHit2D hit = Physics2D.BoxCast(bounds.center, bounds.size, 0, Vector2.down, 0.02f);
-        grounded = hit.collider != null;
-        //if (grounded) print("on ground: " + hit.collider.name);
-        //else print("off ground");
+        int hits = GetComponent<Rigidbody2D>().Cast(Vector2.down, new RaycastHit2D[1], 0.02f);
+        return grounded = hits > 0;
+        //Bounds bounds = GetComponent<Collider2D>().bounds;
+        //RaycastHit2D hit = Physics2D.BoxCast(bounds.center, bounds.size, 0, Vector2.down, 0.02f);
+        //return grounded = hit.collider != null;
     }
+
+    public void Hit(int damage)
+    {
+        //print(name + " hit: " + damage + " damage");
+        health -= damage;
+        if (health <= 0)
+            Die();
+    }
+
+    private void Die()
+    {
+        print(name + " died!!1");
+    }
+
 }

@@ -9,11 +9,11 @@ public class EnemyConroller : MonoBehaviour {
     public float speed = 20;
     public float jumpspeed = 1000;
     public bool isstationary = false;
-    public float range = 3;
+    public float walkRange = 0;
     public float pause = 1.0f;
     public int maxHealth = 10;
+    public int power = 1;
 
-    private bool grounded = false;
     private int facing = LEFT;
     private float leftposition;
     private float rightposition;
@@ -24,7 +24,7 @@ public class EnemyConroller : MonoBehaviour {
     void Start () {
         health = maxHealth;
         rightposition = transform.position.x;
-        leftposition = rightposition - range;
+        leftposition = rightposition - walkRange;
     }
 
     // Update is called once per frame
@@ -42,6 +42,7 @@ public class EnemyConroller : MonoBehaviour {
                 else
                 {
                     body.AddForce(Vector2.right * facing * speed);
+                    //body.velocity = Vector2.right * facing * speed;
                 }
             }
             SpriteRenderer sprite = GetComponent<SpriteRenderer>();
@@ -53,8 +54,11 @@ public class EnemyConroller : MonoBehaviour {
     {
         waiting = true;
         yield return new WaitForSeconds(seconds);
-        facing = -facing;
-        waiting = false;
+        if (waiting)
+        {
+            facing = -facing;
+            waiting = false;
+        }
     }
 
     public void Hit(int damage)
@@ -65,16 +69,23 @@ public class EnemyConroller : MonoBehaviour {
             Die();
     }
 
-    public void Die()
+    private void Die()
     {
         //print(name + " died");
         Destroy(gameObject);
     }
 
-    private void CheckGrounded()
+    void OnCollisionEnter2D(Collision2D other)
     {
-        Bounds bounds = GetComponent<Collider2D>().bounds;
-        RaycastHit2D hit = Physics2D.BoxCast(bounds.center, bounds.size, 0, Vector2.down, 0.02f);
-        grounded = hit.collider != null;
+        if (other.gameObject.tag == "Player")
+        {
+            other.gameObject.GetComponent<PlayerController>().Hit(power);
+        }
+    }
+
+    private bool CheckGrounded()
+    {
+        int hits = GetComponent<Rigidbody2D>().Cast(Vector2.down, new RaycastHit2D[1], 0.02f);
+        return hits > 0;
     }
 }
