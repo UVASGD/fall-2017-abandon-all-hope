@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     const int LEFT = -1, RIGHT = 1;
 
-    public float speed = 10;
-    public float jumpspeed = 100;
+    public float speed = 40;
+    public float jumpspeed = 1000;
 
 	public BulletMovement bullet;
 	public float bulletSpeed = 0.5f;
@@ -42,8 +42,10 @@ public class PlayerController : MonoBehaviour {
 		{
 			BulletMovement bullet2 = Instantiate(bullet, transform.position + new Vector3(.7f * facing, .1f), Quaternion.identity);
 			bullet2.velocity = new Vector2(bulletSpeed * facing, 0);
-		}	
-	}
+		}
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        sprite.flipX = facing == LEFT;
+    }
 
     private void CheckGrounded()
     {

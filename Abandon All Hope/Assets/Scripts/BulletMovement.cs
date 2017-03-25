@@ -5,7 +5,9 @@ using UnityEngine;
 public class BulletMovement : MonoBehaviour {
 
 	public Vector2 velocity;
-	private double timeout = 5.0;
+	public double timeout = 2.0;
+    public int power = 1;
+
 	// Use this for initialization
 	void Start () {
 		
@@ -20,17 +22,14 @@ public class BulletMovement : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerEnter2D (Collider2D other)
-	{
-		// TODO: Check tag
-		Destroy (this.gameObject);
-	}
-
 	void OnCollisionEnter2D (Collision2D other)
 	{
-		// TODO: Check tag
+		if (other.gameObject.tag == "Enemy")
+        {
+            EnemyConroller enemy = other.gameObject.GetComponent<EnemyConroller>();
+            enemy.Hit(power);
+        }
 		Destroy (this.gameObject);
-		print("hi");
 	}
 
     
