@@ -89,6 +89,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: {x: 0.5, y: 0}
+  timeout: 2
+  power: 1
 --- !u!212 &212437882642701566
 SpriteRenderer:
   m_ObjectHideFlags: 1
