@@ -93,7 +93,7 @@ MonoBehaviour:
   isstationary: 0
   walkRange: 3
   pause: 0.75
-  maxHealth: 10
+  maxHealth: 5
   power: 1
 --- !u!212 &212387692615725550
 SpriteRenderer:

@@ -11,7 +11,7 @@ public class EnemyConroller : MonoBehaviour {
     public bool isstationary = false;
     public float walkRange = 0;
     public float pause = 1.0f;
-    public int maxHealth = 10;
+    public int maxHealth = 5;
     public int power = 1;
 
     private int facing = LEFT;
