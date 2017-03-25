@@ -22,7 +22,15 @@ public class TitleUIManager : MonoBehaviour {
 	}
 
 	public void StartGame() {
-		SceneManager.LoadScene (mainScene);
+		ScreenTransition.DoTransition(new ScreenTransitionParams() { 
+			fadeInTime=1.0f,
+			waitTime = 2.0f,
+			fadeOutTime = 1.0f,
+			text="O HAI",
+			fontSize=40
+		}, () => {
+			SceneManager.LoadScene (mainScene);
+		});
 	}
 
 	// shows the "top level" title screen buttons
