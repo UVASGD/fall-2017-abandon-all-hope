@@ -8,34 +8,42 @@ public class EnemyConroller : MonoBehaviour {
 
     public float speed = 20;
     public float jumpspeed = 1000;
-    public bool isstationary = false;
+    public bool stationary = false;
+    public bool followPlayer = true;
     public float walkRange = 0;
+    public float visionRange = 0;
+    public Vector2 shootRange;
     public float pause = 1.0f;
     public int maxHealth = 5;
     public int power = 1;
 
     private int facing = LEFT;
-    private float leftposition;
-    private float rightposition;
+    private float leftPosition;
+    private float rightPosition;
     private bool waiting;
     private int health;
 
     // Use this for initialization
     void Start () {
         health = maxHealth;
-        rightposition = transform.position.x;
-        leftposition = rightposition - walkRange;
+        rightPosition = transform.position.x;
+        leftPosition = rightPosition - walkRange;
     }
 
     // Update is called once per frame
     void Update () {
-        if (!isstationary)
+        Rigidbody2D body = GetComponent<Rigidbody2D>();
+        GameObject player = GameObject.Find("Player");
+        if (followPlayer && DetectPlayer(player))
         {
-            Rigidbody2D body = GetComponent<Rigidbody2D>();
+            if ()
+            body.AddForce(Vector2.right * facing * speed);
+        } else if (!stationary)
+        {
             if (!waiting)
             {
-                if (body.position.x >= rightposition && facing == RIGHT || 
-                    body.position.x <= leftposition && facing == LEFT)
+                if (body.position.x >= rightPosition && facing == RIGHT || 
+                    body.position.x <= leftPosition && facing == LEFT)
                 {
                     StartCoroutine(WaitAndChangeDirection(pause));
                 }
@@ -45,9 +53,9 @@ public class EnemyConroller : MonoBehaviour {
                     //body.velocity = Vector2.right * facing * speed;
                 }
             }
-            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
-            sprite.flipX = facing == LEFT;
         }
+        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+        sprite.flipX = facing == LEFT;
     }
 
     IEnumerator WaitAndChangeDirection(float seconds)
@@ -85,7 +93,12 @@ public class EnemyConroller : MonoBehaviour {
 
     private bool CheckGrounded()
     {
-        int hits = GetComponent<Rigidbody2D>().Cast(Vector2.down, new RaycastHit2D[1], 0.02f);
-        return hits > 0;
+        return GetComponent<Rigidbody2D>().Cast(Vector2.down, new RaycastHit2D[1], 0.02f) > 0;
+    }
+
+    private bool DetectPlayer(GameObject player)
+    {
+        Vector3 disp = player.transform.position - transform.position;
+        return disp.x * facing >= 0 && disp.sqrMagnitude < visionRange * visionRange;
     }
 }
