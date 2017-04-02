@@ -36,9 +36,9 @@ public class EnemyConroller : MonoBehaviour {
         GameObject player = GameObject.Find("Player");
         if (followPlayer && DetectPlayer(player))
         {
-            if ()
             body.AddForce(Vector2.right * facing * speed);
-        } else if (!stationary)
+        }
+        else if (!stationary)
         {
             if (!waiting)
             {
