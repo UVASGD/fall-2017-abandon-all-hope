@@ -768,11 +768,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114864781000596880, guid: 8e569739de77375459c255920bb7cc0d,
-        type: 2}
-      propertyPath: speed
-      value: 26
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e569739de77375459c255920bb7cc0d, type: 2}
   m_IsPrefabParent: 0
