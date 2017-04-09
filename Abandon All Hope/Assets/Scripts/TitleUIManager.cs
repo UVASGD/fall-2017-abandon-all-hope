@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TitleUIManager : MonoBehaviour {
 
 	[Tooltip("The name of the scene that \"Play\" redirects to")]
-	public string mainScene;
+	public string main = "main";
 
 	[Tooltip("The root of UI specific to the top level title screen buttons")]
 	public GameObject titleScreen;
@@ -30,7 +30,7 @@ public class TitleUIManager : MonoBehaviour {
 
             fontSize =25
 		}, () => {
-			SceneManager.LoadScene (mainScene);
+			SceneManager.LoadScene (main);
 		});
 	}
 
@@ -45,4 +45,20 @@ public class TitleUIManager : MonoBehaviour {
 		controlsScreen.SetActive (true);
 		titleScreen.SetActive (false);
 	}
+
+    public void RestartLevel1()
+    {
+        ScreenTransition.DoTransition(new ScreenTransitionParams()
+        {
+            fadeInTime = 1.0f,
+            waitTime = 2.0f,
+            fadeOutTime = 1.0f,
+            text = "Restarting level 1",
+
+            fontSize = 25
+        }, () => {
+            SceneManager.LoadScene(main);
+        });
+    }
+
 }
