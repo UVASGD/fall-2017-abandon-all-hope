@@ -94,10 +94,13 @@ MonoBehaviour:
   followPlayer: 1
   walkRange: 3
   visionRange: 6
-  shootRange: {x: 1, y: 3}
+  shootRange: {x: 4, y: 1}
   pause: 0.75
   maxHealth: 5
   power: 1
+  shootCooldown: 0.5
+  bullet: {fileID: 114884830431885196, guid: f6a7a2877ebbe914b8580835020a0614, type: 2}
+  bulletSpeed: 8
 --- !u!212 &212387692615725550
 SpriteRenderer:
   m_ObjectHideFlags: 1

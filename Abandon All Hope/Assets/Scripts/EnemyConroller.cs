@@ -16,11 +16,16 @@ public class EnemyConroller : MonoBehaviour {
     public float pause = 1.0f;
     public int maxHealth = 5;
     public int power = 1;
+    public float shootCooldown = 1;
+
+    public BulletController bullet;
+    public float bulletSpeed = 4;
 
     private int facing = LEFT;
     private float leftPosition;
     private float rightPosition;
     private bool waiting;
+    private float shootTimer;
     private int health;
 
     // Use this for initialization
@@ -34,8 +39,18 @@ public class EnemyConroller : MonoBehaviour {
     void Update () {
         Rigidbody2D body = GetComponent<Rigidbody2D>();
         GameObject player = GameObject.Find("Player");
+        if (InShootRange(player))
+        {
+            shootTimer += Time.deltaTime;
+            if (shootTimer >= shootCooldown)
+            {
+                Shoot();
+                shootTimer = 0;
+            }
+        }
         if (followPlayer && DetectPlayer(player))
         {
+            waiting = false;
             body.AddForce(Vector2.right * facing * speed);
         }
         else if (!stationary)
@@ -99,6 +114,20 @@ public class EnemyConroller : MonoBehaviour {
     private bool DetectPlayer(GameObject player)
     {
         Vector3 disp = player.transform.position - transform.position;
-        return disp.x * facing >= 0 && disp.sqrMagnitude < visionRange * visionRange;
+        return disp.x * facing >= 0 && disp.sqrMagnitude <= visionRange * visionRange;
+    }
+
+    private bool InShootRange(GameObject player)
+    {
+        Vector3 disp = player.transform.position - transform.position;
+        disp.x *= facing;
+        return disp.x >= 0 && disp.x <= shootRange.x && Mathf.Abs(disp.y) <= shootRange.y;
+    }
+
+    private void Shoot()
+    {
+        Vector3 position = transform.position + new Vector3(.7f * facing, .1f);
+        BulletController bullet2 = Instantiate(bullet, position, Quaternion.identity);
+        bullet2.velocity = new Vector2(bulletSpeed * facing, 0);
     }
 }
