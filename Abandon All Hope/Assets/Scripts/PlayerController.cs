@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour {
 
 	public BulletMovement bullet;
 	public float bulletSpeed = 0.5f;
+
     private bool grounded = false;
 	private int facing = 1;
     private int health;
@@ -68,8 +69,7 @@ public class PlayerController : MonoBehaviour {
 
     private bool CheckGrounded()
     {
-        int hits = GetComponent<Rigidbody2D>().Cast(Vector2.down, new RaycastHit2D[1], 0.02f);
-        return grounded = hits > 0;
+        return GetComponent<Rigidbody2D>().Cast(Vector2.down, new RaycastHit2D[1], 0.02f) > 0;
         //Bounds bounds = GetComponent<Collider2D>().bounds;
         //RaycastHit2D hit = Physics2D.BoxCast(bounds.center, bounds.size, 0, Vector2.down, 0.02f);
         //return grounded = hit.collider != null;
@@ -88,6 +88,7 @@ public class PlayerController : MonoBehaviour {
         //death animation
         SceneManager.LoadScene("death scene level 1");
         print(name + " died!!1");
+        
     }
 
 }
