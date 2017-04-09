@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - ScreenTransition
+  - NPC
   layers:
   - Default
   - TransparentFX

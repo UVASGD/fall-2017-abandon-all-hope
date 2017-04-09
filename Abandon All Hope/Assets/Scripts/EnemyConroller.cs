@@ -29,6 +29,11 @@ public class EnemyConroller : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+
+       
+       
+        
+
         if (!isstationary)
         {
             Rigidbody2D body = GetComponent<Rigidbody2D>();
@@ -88,4 +93,6 @@ public class EnemyConroller : MonoBehaviour {
         int hits = GetComponent<Rigidbody2D>().Cast(Vector2.down, new RaycastHit2D[1], 0.02f);
         return hits > 0;
     }
+
+    
 }
