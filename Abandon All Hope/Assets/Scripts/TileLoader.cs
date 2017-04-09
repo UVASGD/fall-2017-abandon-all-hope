@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class TileLoader : MonoBehaviour
 {
-
     public TextAsset mapFile;
     public GameObject platform;
 

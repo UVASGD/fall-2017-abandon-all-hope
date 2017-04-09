@@ -89,9 +89,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.1, y: -0.05}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1.5}
+  m_Size: {x: 0.7, y: 1.4}
 --- !u!114 &114864781000596880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,10 +103,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88fd9aaebda0d6439fc9a7717602535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 25
+  speed: 26
   jumpspeed: 1000
-  isstationary: 0
+  stationary: 0
+  followPlayer: 1
   walkRange: 3
+  visionRange: 6
+  shootRange: {x: 1, y: 3}
   pause: 0.75
   maxHealth: 5
   power: 1
@@ -143,5 +146,5 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d790f0ee47d6fd648a09fb34e0a84b5f, type: 3}
   m_Color: {r: 0.60294116, g: 0.5497405, b: 0.5497405, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
