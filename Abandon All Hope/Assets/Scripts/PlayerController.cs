@@ -64,6 +64,7 @@ public class PlayerController : MonoBehaviour {
     private void Die()
     {
         print(name + " died!!1");
+        
     }
 
     private void Shoot()
