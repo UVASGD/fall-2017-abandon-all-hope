@@ -37,14 +37,14 @@ public class EnemyConroller : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
        
        
         
 
-        if (!isstationary)
-=======
+  //      if (!isstationary)
+//=======
         Rigidbody2D body = GetComponent<Rigidbody2D>();
         GameObject player = GameObject.Find("Player");
         if (InShootRange(player))
@@ -62,7 +62,7 @@ public class EnemyConroller : MonoBehaviour {
             body.AddForce(Vector2.right * facing * speed);
         }
         else if (!stationary)
->>>>>>> origin/master
+//>>>>>>> origin/master
         {
             if (!waiting)
             {

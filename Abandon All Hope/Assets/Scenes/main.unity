@@ -4878,6 +4878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageCanvas: {fileID: 1542357556}
+  npctext: {fileID: 129825403}
 --- !u!1 &1767757929
 GameObject:
   m_ObjectHideFlags: 0
