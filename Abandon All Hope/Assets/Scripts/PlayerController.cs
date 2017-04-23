@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
@@ -12,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 	public BulletController bullet;
 	public float bulletSpeed = 4;
 
+    private bool grounded = false;
 	private int facing = 1;
     private int health;
 
@@ -43,6 +45,10 @@ public class PlayerController : MonoBehaviour {
 		}
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
         sprite.flipX = facing == LEFT;
+        if (!CheckGrounded() && body.position.y < -25)
+        {
+            Die();
+        }
     }
 
     private bool CheckGrounded()
@@ -64,7 +70,7 @@ public class PlayerController : MonoBehaviour {
     private void Die()
     {
         print(name + " died!!1");
-        
+        SceneManager.LoadScene("death screen");
     }
 
     private void Shoot()
