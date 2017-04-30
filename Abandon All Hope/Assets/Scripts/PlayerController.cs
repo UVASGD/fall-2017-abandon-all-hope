@@ -21,8 +21,8 @@ public class PlayerController : MonoBehaviour {
 
     private float old_pos;
 
-
     private int sprintFrames = 0;
+
 	// Use this for initialization
 	void Start () {
         health = maxhealth;
@@ -91,6 +91,10 @@ public class PlayerController : MonoBehaviour {
         }
 
         old_pos = transform.position.x;
+    }
+
+    public int Health {
+        get { return health; }
     }
 
     private bool CheckGrounded()
