@@ -7,14 +7,14 @@ using UnityEngine.UI;
 //to do: remove dialogue box when NPC dialogue is exhausted and the player presses Z again, make components more generalized so they work for any NPC
 public class NPC : MonoBehaviour
 {
-    
+    private bool alreadyPlayed = false;
     private bool TouchingPlayer = false;
     [SerializeField]
     Canvas messageCanvas;
     public GameObject npctext;
     Text npcText;
     private bool initText = true; //flag for if the initial "press to talk" text should be showing or not
-    private string[] DialogueSequence = new string []{ "Welcome", "to", "Hell!" };
+    public string[] DialogueSequence = new string []{ "Welcome", "to", "Hell!" };
     private int SeqInd = 0;
     private bool DoneTalking = false; //flag for if the NPC's dialogue has been exhausted
     private int waitframes = 0;
@@ -22,7 +22,7 @@ public class NPC : MonoBehaviour
     {
         messageCanvas.enabled = false;
         npcText = npctext.GetComponent<Text>();
-        npcText.text = "Press Z to talk to the inhabitants of Hell";
+        npcText.text = "Press Z to Interact";
         initText = true;
     }
 
@@ -30,7 +30,7 @@ public class NPC : MonoBehaviour
     {
         if (DoneTalking == false && waitframes == 0)
         {
-            if (Input.GetKey(KeyCode.Z) && TouchingPlayer == true)
+            if (TouchingPlayer == true && alreadyPlayed == false)
             {
                 npcText.text = DialogueSequence[SeqInd];
                 TurnOnMessage();
@@ -44,17 +44,18 @@ public class NPC : MonoBehaviour
 
                     SeqInd = 0;
                     print(SeqInd);
-                    waitframes = 20;
+                    waitframes = 90;
                 }
 
                 initText = false;
-                waitframes = 10;
+                waitframes = 90;
             }
-            else if (TouchingPlayer == true && initText == true)
+            else if (TouchingPlayer == true && initText == true && alreadyPlayed == false)
             {
-                npcText.text = "Press Z to talk to the inhabitants of Hell";
+                npcText.text = "Press Z to Interact";
                 TurnOnMessage();
             }
+            
         }
         else if(waitframes != 0)
         {
@@ -88,6 +89,7 @@ public class NPC : MonoBehaviour
             TurnOffMessage();
             DoneTalking = false;
             SeqInd = 0;
+            alreadyPlayed = true;
         }
     }
 
