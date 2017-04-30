@@ -5386,6 +5386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   messageCanvas: {fileID: 1542357556}
+  npctext: {fileID: 129825403}
 --- !u!4 &1757667269 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4963479279072754, guid: 8e569739de77375459c255920bb7cc0d,

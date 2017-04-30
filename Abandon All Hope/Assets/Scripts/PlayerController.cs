@@ -6,6 +6,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour {
     const int LEFT = -1, RIGHT = 1;
 
+    int prev_dir = 1;
+
     public float speed = 40;
     public float jumpspeed = 1000;
     public int maxhealth = 10;
@@ -17,27 +19,65 @@ public class PlayerController : MonoBehaviour {
 	private int facing = 1;
     private int health;
 
+    private float old_pos;
+
+
+    private int sprintFrames = 0;
 	// Use this for initialization
 	void Start () {
         health = maxhealth;
+        old_pos = transform.position.x;
 	}
 	
 	// Update is called once per frame
 	void Update () {
         Rigidbody2D body = GetComponent<Rigidbody2D>();
+        if(old_pos == transform.position.x && prev_dir ==facing)
+        {
+            sprintFrames = 0;
+            print("still");
+        }
 		if (Input.GetKey(KeyCode.LeftArrow))
         {
-            body.AddForce(Vector2.left * speed);
+            if(CheckGrounded())
+            {
+                sprintFrames++;
+            }
+            
+            if (sprintFrames >= 90)
+            {
+                body.AddForce(Vector2.left * (speed+15));
+                print("Sprinting");
+            }
+            else
+            {
+                body.AddForce(Vector2.left * speed);
+            }
+            
 			facing = LEFT;
+            
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            body.AddForce(Vector2.right * speed);
-			facing = RIGHT;
+            if (CheckGrounded())
+            {
+                sprintFrames++;
+            }
+            if (sprintFrames >= 90)
+            {
+                body.AddForce(Vector2.right * (speed + 15));
+                print("Sprinting");
+            }
+            else
+            {
+                body.AddForce(Vector2.right * speed);
+            }
+            facing = RIGHT;
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) && CheckGrounded())
         {
             body.AddForce(Vector2.up * jumpspeed);
+            sprintFrames = 0;
         }
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
@@ -49,6 +89,8 @@ public class PlayerController : MonoBehaviour {
         {
             Die();
         }
+
+        old_pos = transform.position.x;
     }
 
     private bool CheckGrounded()
@@ -79,4 +121,11 @@ public class PlayerController : MonoBehaviour {
         BulletController bullet2 = Instantiate(bullet, position, Quaternion.identity);
         bullet2.Initialize(new Vector2(bulletSpeed * facing, 0), false);
     }
+}
+
+public enum DashState
+{
+    Ready,
+    Dashing,
+    Cooldown
 }
