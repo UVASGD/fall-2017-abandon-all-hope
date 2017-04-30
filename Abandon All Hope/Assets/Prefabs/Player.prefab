@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212387692615725550}
   - component: {fileID: 50172666132683212}
   - component: {fileID: 61245545755289884}
-  - component: {fileID: 114583518833523456}
+  - component: {fileID: 114004047547734508}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -142,9 +142,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.02, y: -0.02}
   serializedVersion: 2
-  m_Size: {x: 0.6666667, y: 1.3333334}
+  m_Size: {x: 0.6, y: 1.25}
 --- !u!81 &81057870485408506
 AudioListener:
   m_ObjectHideFlags: 1
@@ -239,7 +239,7 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388188443890654}
   m_Enabled: 1
---- !u!114 &114583518833523456
+--- !u!114 &114004047547734508
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -247,11 +247,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1071309721959580}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4fdb3952037ec2d429861c00a02d91ae, type: 3}
+  m_Script: {fileID: 11500000, guid: 3b18fa1a355069d498717c61841cba12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 40
-  jumpspeed: 1000
+  jumpspeed: 1200
   maxhealth: 10
   bullet: {fileID: 114884830431885196, guid: f6a7a2877ebbe914b8580835020a0614, type: 2}
   bulletSpeed: 8

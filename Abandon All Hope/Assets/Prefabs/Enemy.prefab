@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 50172666132683212}
   - component: {fileID: 61245545755289884}
   - component: {fileID: 114864781000596880}
-  - component: {fileID: 58761119858827708}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -37,8 +36,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071309721959580}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5, y: -0.25, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.2499194, y: -1.863359, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -64,20 +63,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!58 &58761119858827708
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1071309721959580}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 1
 --- !u!61 &61245545755289884
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -89,9 +74,9 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.1, y: -0.05}
+  m_Offset: {x: -0.1, y: -0.02}
   serializedVersion: 2
-  m_Size: {x: 0.7, y: 1.4}
+  m_Size: {x: 0.7, y: 1.35}
 --- !u!114 &114864781000596880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -109,7 +94,7 @@ MonoBehaviour:
   followPlayer: 1
   walkRange: 3
   visionRange: 6
-  shootRange: {x: 4, y: 1}
+  shootRange: {x: 5, y: 2}
   pause: 0.75
   maxHealth: 5
   power: 1

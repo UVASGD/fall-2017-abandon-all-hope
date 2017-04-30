@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour {
 
-	public Vector2 velocity;
 	public double timeout = 2.0;
     public int power = 1;
     public bool isBad = false;
@@ -16,14 +15,20 @@ public class BulletController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		GetComponent<Rigidbody2D>().velocity = velocity;
 		timeout -= Time.deltaTime;
 		if (timeout <= 0) {
 			Destroy(this.gameObject);
 		}
 	}
 
-	void OnCollisionEnter2D (Collision2D other)
+    public void Initialize(Vector2 velocity, bool isBad)
+    {
+        GetComponent<Rigidbody2D>().velocity = velocity;
+        GetComponent<SpriteRenderer>().flipX = velocity.x < 0;
+        this.isBad = isBad;
+    }
+
+    void OnCollisionEnter2D (Collision2D other)
 	{
         if (isBad && other.gameObject.CompareTag("Player"))
         {

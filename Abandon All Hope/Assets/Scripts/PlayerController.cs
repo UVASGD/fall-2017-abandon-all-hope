@@ -75,7 +75,8 @@ public class PlayerController : MonoBehaviour {
 
     private void Shoot()
     {
-        BulletController bullet2 = Instantiate(bullet, transform.position + new Vector3(.7f * facing, .1f), Quaternion.identity);
-        bullet2.velocity = new Vector2(bulletSpeed * facing, 0);
+        Vector2 position = transform.position + new Vector3(.6f * facing, 0f);
+        BulletController bullet2 = Instantiate(bullet, position, Quaternion.identity);
+        bullet2.Initialize(new Vector2(bulletSpeed * facing, 0), false);
     }
 }

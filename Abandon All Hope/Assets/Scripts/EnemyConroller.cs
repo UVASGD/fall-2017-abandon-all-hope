@@ -24,8 +24,8 @@ public class EnemyConroller : MonoBehaviour {
     private int facing = LEFT;
     private float leftPosition;
     private float rightPosition;
-    private bool waiting;
-    private float shootTimer;
+    private bool waiting = false;
+    private float shootTimer = 0;
     private int health;
 
     // Use this for initialization
@@ -37,24 +37,13 @@ public class EnemyConroller : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
-<<<<<<< HEAD
-
-       
-       
-        
-
-        if (!isstationary)
-=======
         Rigidbody2D body = GetComponent<Rigidbody2D>();
         GameObject player = GameObject.Find("Player");
-        if (InShootRange(player))
+        shootTimer -= Time.deltaTime;
+        if (shootTimer <= 0 && InShootRange(player))
         {
-            shootTimer += Time.deltaTime;
-            if (shootTimer >= shootCooldown)
-            {
-                Shoot();
-                shootTimer = 0;
-            }
+            Shoot();
+            shootTimer = shootCooldown;
         }
         if (followPlayer && DetectPlayer(player))
         {
@@ -62,7 +51,6 @@ public class EnemyConroller : MonoBehaviour {
             body.AddForce(Vector2.right * facing * speed);
         }
         else if (!stationary)
->>>>>>> origin/master
         {
             if (!waiting)
             {
@@ -135,10 +123,9 @@ public class EnemyConroller : MonoBehaviour {
 
     private void Shoot()
     {
-        Vector3 position = transform.position + new Vector3(.7f * facing, .1f);
+        Vector3 position = transform.position + new Vector3(.7f * facing, 0f);
         BulletController bullet2 = Instantiate(bullet, position, Quaternion.identity);
-        bullet2.velocity = new Vector2(bulletSpeed * facing, 0);
+        bullet2.Initialize(new Vector2(bulletSpeed * facing, 0), true);
     }
 
-    
 }
