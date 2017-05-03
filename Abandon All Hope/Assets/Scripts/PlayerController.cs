@@ -79,7 +79,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.UpArrow) && CheckGrounded())
         {
 			//updated jump - maybe less floaty now? -Susannah
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(0,25), ForceMode2D.Impulse);	
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0,45), ForceMode2D.Impulse);	
            // body.AddForce(Vector2.up * jumpspeed);
            // sprintFrames = 0;
         }

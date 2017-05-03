@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50172666132683212}
   - component: {fileID: 61245545755289884}
   - component: {fileID: 114004047547734508}
+  - component: {fileID: 95506709333046346}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -123,7 +124,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 7
+  m_LinearDrag: 10
   m_AngularDrag: 0.05
   m_GravityScale: 3.5
   m_Material: {fileID: 0}
@@ -239,6 +240,23 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1388188443890654}
   m_Enabled: 1
+--- !u!95 &95506709333046346
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1071309721959580}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d7102f94a752de644b1af8fa035f0bbe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114004047547734508
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,6 +273,7 @@ MonoBehaviour:
   maxhealth: 10
   bullet: {fileID: 114884830431885196, guid: f6a7a2877ebbe914b8580835020a0614, type: 2}
   bulletSpeed: 8
+  health: 0
 --- !u!124 &124717449117132376
 Behaviour:
   m_ObjectHideFlags: 1
