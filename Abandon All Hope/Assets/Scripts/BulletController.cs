@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BulletController : MonoBehaviour {
 
 	public double timeout = 2.0;
@@ -23,7 +24,7 @@ public class BulletController : MonoBehaviour {
 
     public void Initialize(Vector2 velocity, bool isBad)
     {
-        GetComponent<Rigidbody2D>().velocity = velocity;
+		GetComponent<Rigidbody2D>().velocity = velocity;
         GetComponent<SpriteRenderer>().flipX = velocity.x < 0;
         this.isBad = isBad;
     }

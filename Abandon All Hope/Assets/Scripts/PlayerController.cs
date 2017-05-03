@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
 
     private bool grounded = false;
 	private int facing = 1;
-    private int health;
+    public int health;
 
     private float old_pos;
 
@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		AudioSource shoot = GetComponent<AudioSource>();
         Rigidbody2D body = GetComponent<Rigidbody2D>();
         if(old_pos == transform.position.x && prev_dir ==facing)
         {
@@ -82,8 +83,8 @@ public class PlayerController : MonoBehaviour {
            // body.AddForce(Vector2.up * jumpspeed);
            // sprintFrames = 0;
         }
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
+		if (Input.GetKeyDown(KeyCode.Space)) {
+			shoot.Play ();
             Shoot();
 		}
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
@@ -100,6 +101,9 @@ public class PlayerController : MonoBehaviour {
         get { return health; }
     }
 
+	public void setHealth(int health) {
+		this.health = health;
+	}
     private bool CheckGrounded()
     {
         return GetComponent<Rigidbody2D>().Cast(Vector2.down, new RaycastHit2D[1], 0.02f) > 0;
