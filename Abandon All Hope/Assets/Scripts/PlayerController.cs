@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour {
     public float speed = 40;
     public float jumpspeed = 1000;
     public int maxhealth = 10;
+	//public Vector2 jumpHeight;
 
 	public BulletController bullet;
 	public float bulletSpeed = 4;
@@ -76,8 +77,10 @@ public class PlayerController : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.UpArrow) && CheckGrounded())
         {
-            body.AddForce(Vector2.up * jumpspeed);
-            sprintFrames = 0;
+			//updated jump - maybe less floaty now? -Susannah
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0,25), ForceMode2D.Impulse);	
+           // body.AddForce(Vector2.up * jumpspeed);
+           // sprintFrames = 0;
         }
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
