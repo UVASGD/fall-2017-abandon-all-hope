@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour {
 	public BulletController bullet;
 	public float bulletSpeed = 4;
 
-    private bool grounded = false;
+   // private bool grounded = false;
 	private int facing = 1;
     public int health;
 
