@@ -12,6 +12,8 @@ public class TitleUIManager : MonoBehaviour {
 	public GameObject titleScreen;
 	[Tooltip("The root of UI specific to controls instructions")]
 	public GameObject controlsScreen;
+    [Tooltip("Root of UI for credits")]
+    public GameObject creditsScreen;
 
 	// Use this for initialization
 	void Start () {
@@ -41,13 +43,22 @@ public class TitleUIManager : MonoBehaviour {
 	public void ShowTitle() {
 		titleScreen.SetActive (true);
 		controlsScreen.SetActive (false);
+        creditsScreen.SetActive(false);
 	}
 
 	// shows the controls instructions layout
 	public void ShowControls() {
 		controlsScreen.SetActive (true);
 		titleScreen.SetActive (false);
+        creditsScreen.SetActive(false);
 	}
+    public void ShowCredits()
+    {
+        controlsScreen.SetActive(false);
+        titleScreen.SetActive(false);
+        creditsScreen.SetActive(true);
+
+    }
 
     public void RestartLevel()
     {
