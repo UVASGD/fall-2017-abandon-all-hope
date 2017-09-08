@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour {
         health = maxhealth;
         old_pos = transform.position.x;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		AudioSource shoot = GetComponent<AudioSource>();
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour {
             {
                 sprintFrames++;
             }
-            
+
             if (sprintFrames >= 90)
             {
                 body.AddForce(Vector2.left * (speed+15));
@@ -55,9 +55,9 @@ public class PlayerController : MonoBehaviour {
             {
                 body.AddForce(Vector2.left * speed);
             }
-            
+
 			facing = LEFT;
-            
+
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -79,9 +79,15 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.UpArrow) && CheckGrounded())
         {
 			//updated jump - maybe less floaty now? -Susannah
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(0,45), ForceMode2D.Impulse);	
+			GetComponent<Rigidbody2D>().AddForce(new Vector2(0,20), ForceMode2D.Impulse);
            // body.AddForce(Vector2.up * jumpspeed);
            // sprintFrames = 0;
+        }
+        if (Input.GetKey(KeyCode.UpArrow)){
+            if(GetComponent<Rigidbody2D>().velocity.y > 4)
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 1.0f), ForceMode2D.Impulse);
+            else GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 0.1f), ForceMode2D.Impulse);
+
         }
 		if (Input.GetKeyDown(KeyCode.Space)) {
 			shoot.Play ();
