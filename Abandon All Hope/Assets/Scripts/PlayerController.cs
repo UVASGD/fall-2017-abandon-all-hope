@@ -84,9 +84,9 @@ public class PlayerController : MonoBehaviour {
            // sprintFrames = 0;
         }
         if (Input.GetKey(KeyCode.UpArrow)){
-            if(GetComponent<Rigidbody2D>().velocity.y > 4)
-                GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 1.0f), ForceMode2D.Impulse);
-            else GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 0.1f), ForceMode2D.Impulse);
+            if(GetComponent<Rigidbody2D>().velocity.y > 6)
+                GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 1.3f), ForceMode2D.Impulse);
+            else GetComponent<Rigidbody2D>().AddForce(new Vector2(0.0f, 0.5f), ForceMode2D.Impulse); // Hover mechanic
 
         }
 		if (Input.GetKeyDown(KeyCode.Space)) {
