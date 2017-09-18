@@ -134,6 +134,7 @@ MonoBehaviour:
   shootCooldown: 0.5
   bullet: {fileID: 114884830431885196, guid: f6a7a2877ebbe914b8580835020a0614, type: 2}
   bulletSpeed: 8
+  deathFX: {fileID: 198093600041447502, guid: 649e08b9c853bec4185a7123df91dee0, type: 2}
 --- !u!212 &212387692615725550
 SpriteRenderer:
   m_ObjectHideFlags: 1
