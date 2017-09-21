@@ -94,10 +94,10 @@ public class EnemyConroller : MonoBehaviour {
     private void Die()
     {
         //print(name + " died");
-        //if (deathFX) {
-            GameObject deathFXOBJ = (GameObject)Instantiate(deathFX, transform.position, deathFX.transform.rotation);
+        if (deathFX) {
+            GameObject deathFXOBJ = Instantiate(deathFX, transform.position, Quaternion.identity);
             Destroy(deathFXOBJ, deathFXOBJ.GetComponent<ParticleSystem>().startLifetime);
-        //}
+        }
         Destroy(gameObject);
     }
 
