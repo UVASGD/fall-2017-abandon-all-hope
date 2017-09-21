@@ -21,6 +21,8 @@ public class EnemyConroller : MonoBehaviour {
     public BulletController bullet;
     public float bulletSpeed = 4;
 
+    public GameObject deathFX;
+
     private int facing = LEFT;
     private float leftPosition;
     private float rightPosition;
@@ -92,6 +94,10 @@ public class EnemyConroller : MonoBehaviour {
     private void Die()
     {
         //print(name + " died");
+        if (deathFX) {
+            GameObject deathFXOBJ = Instantiate(deathFX, transform.position, Quaternion.identity);
+            Destroy(deathFXOBJ, deathFXOBJ.GetComponent<ParticleSystem>().startLifetime);
+        }
         Destroy(gameObject);
     }
 

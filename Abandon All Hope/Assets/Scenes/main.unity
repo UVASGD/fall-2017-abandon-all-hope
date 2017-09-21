@@ -1190,6 +1190,12 @@ Prefab:
       propertyPath: m_LocalScale.y
       value: 0.9424386
       objectReference: {fileID: 0}
+    - target: {fileID: 114864781000596880, guid: 8e569739de77375459c255920bb7cc0d,
+        type: 2}
+      propertyPath: deathFX
+      value: 
+      objectReference: {fileID: 1876064974540528, guid: a9eed5fe56e8e8d499a828957fe5dd6b,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 111448177909022350, guid: 8e569739de77375459c255920bb7cc0d, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 8e569739de77375459c255920bb7cc0d, type: 2}
@@ -10288,11 +10294,6 @@ Prefab:
     - target: {fileID: 4963479279072754, guid: 7002083bd52b5eb46b1b155c4b8a2dcf, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 50172666132683212, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
-        type: 2}
-      propertyPath: m_GravityScale
-      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 82665076918494584, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
         type: 2}
