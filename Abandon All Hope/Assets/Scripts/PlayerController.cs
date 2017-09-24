@@ -24,20 +24,30 @@ public class PlayerController : MonoBehaviour {
 
     private int sprintFrames = 0;
 
+    public Animator anim;
+
+	private AudioSource shoot;
+	public AudioClip shotSound;
+	private Rigidbody2D body;
+
 	// Use this for initialization
 	void Start () {
+		anim.speed = 2;
         health = maxhealth;
         old_pos = transform.position.x;
+		shoot = GetComponent<AudioSource>();
+		body = GetComponent<Rigidbody2D>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		AudioSource shoot = GetComponent<AudioSource>();
-        Rigidbody2D body = GetComponent<Rigidbody2D>();
+		anim.enabled = true;
         if(old_pos == transform.position.x && prev_dir ==facing)
         {
             sprintFrames = 0;
             print("still");
+			anim.enabled = false;
+
         }
 		if (Input.GetKey(KeyCode.LeftArrow))
         {
@@ -84,7 +94,6 @@ public class PlayerController : MonoBehaviour {
            // sprintFrames = 0;
         }
 		if (Input.GetKeyDown(KeyCode.Space)) {
-			shoot.Play ();
             Shoot();
 		}
         SpriteRenderer sprite = GetComponent<SpriteRenderer>();
@@ -95,6 +104,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         old_pos = transform.position.x;
+        prev_dir = facing;
     }
 
     public int Health {
@@ -131,6 +141,7 @@ public class PlayerController : MonoBehaviour {
         Vector2 position = transform.position + new Vector3(.6f * facing, 0f);
         BulletController bullet2 = Instantiate(bullet, position, Quaternion.identity);
         bullet2.Initialize(new Vector2(bulletSpeed * facing, 0), false);
+		shoot.PlayOneShot (shotSound);
     }
 }
 
