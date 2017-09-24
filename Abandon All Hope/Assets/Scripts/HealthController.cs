@@ -23,10 +23,13 @@ public class HealthController : MonoBehaviour {
 		if (other.gameObject.name == "Player")
 		{
 			//TouchingPlayer = false;
-			health.Play (); //current health sound starts to play but is destroyed before it can complete
 			PlayerController player = other.gameObject.GetComponent<PlayerController>();
-			player.setHealth (player.Health + 2);
-			Destroy (this.gameObject);
+			if (player.Health != player.maxhealth) {
+				player.setHealth (player.Health + 2);
+				health.Play (); //current health sound starts to play but is destroyed before it can complete
+				Destroy (this.gameObject);
+			}
+
 		}
 	}
 }
