@@ -47,7 +47,10 @@ public class PlayerController : MonoBehaviour {
             sprintFrames = 0;
             print("still");
 			anim.enabled = false;
-
+        }
+        if(!CheckGrounded()){
+            print("midair");
+            anim.enabled = false;
         }
 		if (Input.GetKey(KeyCode.LeftArrow))
         {
