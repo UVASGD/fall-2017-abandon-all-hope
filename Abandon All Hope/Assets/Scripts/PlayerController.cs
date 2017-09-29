@@ -23,6 +23,8 @@ public class PlayerController : MonoBehaviour {
     private float old_pos;
 
     private int sprintFrames = 0;
+	private int jumpTimer = 0;
+	private int jumpCooldown = 2; //number of frames before you can jump again. Used to prevent multiple jumps triggering in the space of one jump.
 
     public Animator anim;
 
@@ -89,13 +91,16 @@ public class PlayerController : MonoBehaviour {
             }
             facing = RIGHT;
         }
-        if (Input.GetKeyDown(KeyCode.UpArrow) && CheckGrounded())
-        {
+		if (Input.GetKey (KeyCode.UpArrow) && CheckGrounded () && jumpTimer == 0) {
 			//updated jump - maybe less floaty now? -Susannah
-			GetComponent<Rigidbody2D>().AddForce(new Vector2(0,45), ForceMode2D.Impulse);	
-           // body.AddForce(Vector2.up * jumpspeed);
-           // sprintFrames = 0;
-        }
+			jumpTimer = jumpCooldown;
+			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, 45), ForceMode2D.Impulse);	
+			// body.AddForce(Vector2.up * jumpspeed);
+			// sprintFrames = 0;
+		}
+		if (jumpTimer > 0) {
+			jumpTimer--;
+		}
 		if (Input.GetKeyDown(KeyCode.Space)) {
             Shoot();
 		}
