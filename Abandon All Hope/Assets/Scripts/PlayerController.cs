@@ -8,8 +8,10 @@ public class PlayerController : MonoBehaviour {
 
     int prev_dir = 1;
 
-    public float speed = 40;
-    public float jumpspeed = 1000;
+	public float speed;
+	public float jumpspeed;
+	public float sprintspeed;
+	public float midairaccel;
     public int maxhealth = 10;
 	//public Vector2 jumpHeight;
 
@@ -23,8 +25,9 @@ public class PlayerController : MonoBehaviour {
     private float old_pos;
 
     private int sprintFrames = 0;
+	private int framesUntilSprint = 50;
 	private int jumpTimer = 0;
-	private int jumpCooldown = 2; //number of frames before you can jump again. Used to prevent multiple jumps triggering in the space of one jump.
+	private int jumpCooldown = 5; //number of frames before you can jump again. Used to prevent multiple jumps triggering in the space of one jump.
 
     public Animator anim;
 
@@ -46,57 +49,49 @@ public class PlayerController : MonoBehaviour {
 		anim.enabled = true;
         if(old_pos == transform.position.x && prev_dir ==facing)
         {
-            sprintFrames = 0;
+//            sprintFrames = 0;
             print("still");
 			anim.enabled = false;
         }
-        if(!CheckGrounded()){
-            print("midair");
-            anim.enabled = false;
-        }
-		if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            if(CheckGrounded())
-            {
-                sprintFrames++;
-            }
-            
-            if (sprintFrames >= 90)
-            {
-                body.AddForce(Vector2.left * (speed+15));
-                print("Sprinting");
-            }
-            else
-            {
-                body.AddForce(Vector2.left * speed);
-            }
-            
-			facing = LEFT;
-            
-        }
-        if (Input.GetKey(KeyCode.RightArrow))
-        {
-            if (CheckGrounded())
-            {
-                sprintFrames++;
-            }
-            if (sprintFrames >= 90)
-            {
-                body.AddForce(Vector2.right * (speed + 15));
-                print("Sprinting");
-            }
-            else
-            {
-                body.AddForce(Vector2.right * speed);
-            }
-            facing = RIGHT;
-        }
-		if (Input.GetKey (KeyCode.UpArrow) && CheckGrounded () && jumpTimer == 0) {
-			//updated jump - maybe less floaty now? -Susannah
-			jumpTimer = jumpCooldown;
-			GetComponent<Rigidbody2D> ().AddForce (new Vector2 (0, 45), ForceMode2D.Impulse);	
-			// body.AddForce(Vector2.up * jumpspeed);
-			// sprintFrames = 0;
+		if (CheckGrounded ()) {
+			if (Input.GetKey (KeyCode.LeftArrow) && Input.GetKey (KeyCode.RightArrow)) {
+				sprintFrames = 0;
+				body.velocity = new Vector2 (0, 0);
+			} else if (Input.GetKey (KeyCode.LeftArrow)) {
+				sprintFrames++;
+				facing = LEFT;
+				if (sprintFrames >= framesUntilSprint) {
+					body.velocity = new Vector2 (-sprintspeed, 0);
+				} else {
+					body.velocity = new Vector2 (-speed, 0);
+				}
+			} else if (Input.GetKey (KeyCode.RightArrow)) {
+				sprintFrames++;
+				facing = RIGHT;
+				if (sprintFrames >= framesUntilSprint) {
+					body.velocity = new Vector2 (sprintspeed, 0);
+				} else {
+					body.velocity = new Vector2 (speed, 0);
+				}
+			} else {
+				sprintFrames = 0;
+				body.velocity = new Vector2 (0, 0);
+			}
+			if (Input.GetKey (KeyCode.UpArrow)) {
+				sprintFrames = 0;
+				jumpTimer = jumpCooldown;
+				body.AddForce (new Vector2 (0, 30), ForceMode2D.Impulse);	
+			}
+		} else {
+			if (Input.GetKey (KeyCode.LeftArrow) && Input.GetKey (KeyCode.RightArrow)) {
+			} else if (Input.GetKey (KeyCode.LeftArrow)) {
+				facing = LEFT;
+				body.AddForce (new Vector2(-midairaccel, 0));
+			} else if (Input.GetKey (KeyCode.RightArrow)) {
+				facing = RIGHT;
+				body.AddForce (new Vector2(midairaccel, 0));
+			} else {
+			}
 		}
 		if (jumpTimer > 0) {
 			jumpTimer--;

@@ -301,7 +301,7 @@ GameObject:
   - component: {fileID: 68454847}
   - component: {fileID: 68454846}
   m_Layer: 0
-  m_Name: New Sprite
+  m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10055,6 +10055,56 @@ Prefab:
     - target: {fileID: 4963479279072754, guid: 7002083bd52b5eb46b1b155c4b8a2dcf, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 50172666132683212, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_GravityScale
+      value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 50172666132683212, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50172666132683212, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: jumpspeed
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50172666132683212, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50172666132683212, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: c78bf2f6440e041f2b68b70cb5f3a169, type: 2}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: sprintspeed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: midairaccel
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7002083bd52b5eb46b1b155c4b8a2dcf, type: 2}
