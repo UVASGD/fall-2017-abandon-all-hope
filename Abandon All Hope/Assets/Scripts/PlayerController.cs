@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour {
 	public float jumpspeed;
 	public float sprintspeed;
 	public float midairaccel;
+	public float jumpVelDampen;
     public int maxhealth = 10;
 	//public Vector2 jumpHeight;
 
@@ -80,7 +81,8 @@ public class PlayerController : MonoBehaviour {
 			if (Input.GetKey (KeyCode.UpArrow)) {
 				sprintFrames = 0;
 				jumpTimer = jumpCooldown;
-				body.AddForce (new Vector2 (0, 30), ForceMode2D.Impulse);	
+				body.AddForce (new Vector2 (0, 30), ForceMode2D.Impulse);
+				body.AddForce(new Vector2(-body.velocity.x * jumpVelDampen, 0));
 			}
 		} else {
 			if (Input.GetKey (KeyCode.LeftArrow) && Input.GetKey (KeyCode.RightArrow)) {
