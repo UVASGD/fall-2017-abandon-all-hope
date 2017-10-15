@@ -10082,7 +10082,7 @@ Prefab:
     - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
         type: 2}
       propertyPath: jumpspeed
-      value: 0.05
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
         type: 2}
@@ -10114,6 +10114,12 @@ Prefab:
       propertyPath: jumpVelDampen
       value: 0.6
       objectReference: {fileID: 0}
+    - target: {fileID: 212387692615725550, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300054, guid: c3684f9619fefdb4b88baa80736ae86c,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7002083bd52b5eb46b1b155c4b8a2dcf, type: 2}
   m_IsPrefabParent: 0

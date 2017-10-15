@@ -35,7 +35,9 @@ public class PlayerController : MonoBehaviour {
 	private AudioSource shoot;
 	public AudioClip shotSound;
 	private Rigidbody2D body;
-
+//	public Sprite idleSprite;
+//	public Sprite jumpSprite;
+//
 	// Use this for initialization
 	void Start () {
 		anim.speed = 2;
@@ -81,7 +83,7 @@ public class PlayerController : MonoBehaviour {
 			if (Input.GetKey (KeyCode.UpArrow)) {
 				sprintFrames = 0;
 				jumpTimer = jumpCooldown;
-				body.AddForce (new Vector2 (0, 30), ForceMode2D.Impulse);
+				body.AddForce (new Vector2 (0, jumpspeed), ForceMode2D.Impulse);
 				body.AddForce(new Vector2(-body.velocity.x * jumpVelDampen, 0));
 			}
 		} else {
