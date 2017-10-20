@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour {
 		if (CheckGrounded ()) {
 			if (Input.GetKey (KeyCode.LeftArrow) && Input.GetKey (KeyCode.RightArrow)) {
 				sprintFrames = 0;
-				body.velocity = new Vector2 (0, 0);
+				body.velocity = new Vector2 (0, body.velocity.y);
 			} else if (Input.GetKey (KeyCode.LeftArrow)) {
 				sprintFrames++;
 				facing = LEFT;
@@ -78,9 +78,9 @@ public class PlayerController : MonoBehaviour {
 				}
 			} else {
 				sprintFrames = 0;
-				body.velocity = new Vector2 (0, 0);
+				body.velocity = new Vector2 (0, body.velocity.y);
 			}
-			if (Input.GetKey (KeyCode.UpArrow)) {
+			if (Input.GetKey (KeyCode.UpArrow) && jumpTimer == 0) {
 				sprintFrames = 0;
 				jumpTimer = jumpCooldown;
 				body.AddForce (new Vector2 (0, jumpspeed), ForceMode2D.Impulse);
