@@ -84,7 +84,7 @@ public class PlayerController : MonoBehaviour {
 				sprintFrames = 0;
 				jumpTimer = jumpCooldown;
 				body.AddForce (new Vector2 (0, jumpspeed), ForceMode2D.Impulse);
-				body.AddForce(new Vector2(-body.velocity.x * jumpVelDampen, 0));
+				body.AddForce(new Vector2(body.velocity.x * jumpVelDampen, 0));
 			}
 		} else {
 			if (Input.GetKey (KeyCode.LeftArrow) && Input.GetKey (KeyCode.RightArrow)) {
