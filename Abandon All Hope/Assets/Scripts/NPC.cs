@@ -44,11 +44,11 @@ public class NPC : MonoBehaviour
 
                     SeqInd = 0;
                     print(SeqInd);
-                    waitframes = 120;
+                    waitframes = 220;
                 }
 
                 initText = false;
-                waitframes = 120;
+                waitframes = 220;
             }
             else if (TouchingPlayer == true && initText == true && alreadyPlayed == false)
             {

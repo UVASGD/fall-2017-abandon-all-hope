@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour {
 	//public Vector2 jumpHeight;
 
 	public BulletController bullet;
-	public float bulletSpeed = 4;
+	public float bulletSpeed = 15;
 
    // private bool grounded = false;
 	private int facing = 1;
@@ -26,9 +26,9 @@ public class PlayerController : MonoBehaviour {
     private float old_pos;
 
     private int sprintFrames = 0;
-	private int framesUntilSprint = 50;
+	private int framesUntilSprint = 70;
 	private int jumpTimer = 0;
-	private int jumpCooldown = 5; //number of frames before you can jump again. Used to prevent multiple jumps triggering in the space of one jump.
+	private int jumpCooldown = 3; //number of frames before you can jump again. Used to prevent multiple jumps triggering in the space of one jump.
 
     public Animator anim;
 

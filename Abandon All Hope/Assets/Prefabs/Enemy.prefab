@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d88fd9aaebda0d6439fc9a7717602535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 26
+  speed: 23
   jumpspeed: 1000
   stationary: 0
   followPlayer: 1
@@ -133,7 +133,7 @@ MonoBehaviour:
   power: 1
   shootCooldown: 0.5
   bullet: {fileID: 114884830431885196, guid: f6a7a2877ebbe914b8580835020a0614, type: 2}
-  bulletSpeed: 8
+  bulletSpeed: 15.5
   deathFX: {fileID: 1876064974540528, guid: a9eed5fe56e8e8d499a828957fe5dd6b, type: 2}
 --- !u!212 &212387692615725550
 SpriteRenderer:

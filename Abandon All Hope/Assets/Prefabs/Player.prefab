@@ -459,14 +459,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b18fa1a355069d498717c61841cba12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 8
-  jumpspeed: 20
-  sprintspeed: 10.5
-  midairaccel: 37
+  speed: 7
+  jumpspeed: 25
+  sprintspeed: 10
+  midairaccel: 10
   jumpVelDampen: -25
   maxhealth: 10
   bullet: {fileID: 114884830431885196, guid: f6a7a2877ebbe914b8580835020a0614, type: 2}
-  bulletSpeed: 8
+  bulletSpeed: 15.5
   health: 0
   anim: {fileID: 95506709333046346}
   shotSound: {fileID: 8300000, guid: e55de949b7cce4c6b8ae074a14f094fd, type: 3}
