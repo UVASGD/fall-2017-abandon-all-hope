@@ -28,7 +28,7 @@ public class TitleUIManager : MonoBehaviour {
         ScreenTransition.DoTransition(new ScreenTransitionParams()
         {
             fadeInTime = 2.0f,
-            waitTime = 7.7f,
+            waitTime = 7.0f,
             fadeOutTime = 2.0f,
             text = "Through me you go to the grief wracked city; \n Through me you go to everlasting pain; Through me you go a pass among lost souls. \n Justice inspired my exalted Creator: I am a creature of the Holiest Power, of Wisdom in the Highest and of Primal Love. \n Nothing till I was made was made, only eternal beings. \n And I endure eternally. \n Abandon all hope — Ye Who Enter Here,     \n Dante's Inferno: Canto III",
 
