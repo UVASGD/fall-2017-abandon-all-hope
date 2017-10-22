@@ -10153,9 +10153,65 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 50172666132683212, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
         type: 2}
+      propertyPath: m_GravityScale
+      value: 9.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 50172666132683212, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_LinearDrag
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 50172666132683212, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: speed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: jumpspeed
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 50172666132683212, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 50172666132683212, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
       propertyPath: m_Material
       value: 
       objectReference: {fileID: 6200000, guid: c78bf2f6440e041f2b68b70cb5f3a169, type: 2}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: sprintspeed
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: midairaccel
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: jumpVelDampen
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 212387692615725550, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300054, guid: c3684f9619fefdb4b88baa80736ae86c,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7002083bd52b5eb46b1b155c4b8a2dcf, type: 2}
   m_IsPrefabParent: 0
