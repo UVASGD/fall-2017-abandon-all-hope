@@ -155,13 +155,19 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
+<<<<<<< HEAD
   m_LinearDrag: 0.35
   m_AngularDrag: 0
   m_GravityScale: 6.3
+=======
+  m_LinearDrag: 10
+  m_AngularDrag: 0.05
+  m_GravityScale: 3.5
+>>>>>>> parent of e11eca1... movement tweaks
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 4
 --- !u!61 &61245545755289884
 BoxCollider2D:
@@ -459,11 +465,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b18fa1a355069d498717c61841cba12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
   speed: 8
   jumpspeed: 20
   sprintspeed: 10.5
   midairaccel: 37
   jumpVelDampen: -25
+=======
+  speed: 40
+  jumpspeed: 1200
+>>>>>>> parent of e11eca1... movement tweaks
   maxhealth: 10
   bullet: {fileID: 114884830431885196, guid: f6a7a2877ebbe914b8580835020a0614, type: 2}
   bulletSpeed: 8
