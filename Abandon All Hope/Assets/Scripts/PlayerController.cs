@@ -8,20 +8,25 @@ public class PlayerController : MonoBehaviour {
 
     int prev_dir = 1;
 
+	public GameObject lastPlatform;
 	public float speed;
 	public float jumpspeed;
 	public float sprintspeed;
 	public float midairaccel;
 	public float jumpVelDampen;
     public int maxhealth = 10;
+	public int maxLives = 3;
 	//public Vector2 jumpHeight;
+	public GameObject uiController;
+
 
 	public BulletController bullet;
 	public float bulletSpeed = 15;
 
    // private bool grounded = false;
 	private int facing = 1;
-    public int health;
+	private int health;
+	private int lives;
 
     private float old_pos;
 
@@ -42,9 +47,10 @@ public class PlayerController : MonoBehaviour {
 	void Start () {
 		anim.speed = 2;
         health = maxhealth;
+		lives = maxLives;
         old_pos = transform.position.x;
 		shoot = GetComponent<AudioSource>();
-		body = GetComponent<Rigidbody2D>();
+		body = GetComponent<Rigidbody2D> ();
 	}
 	
 	// Update is called once per frame
@@ -120,10 +126,20 @@ public class PlayerController : MonoBehaviour {
 
 	public void setHealth(int health) {
 		this.health = health;
+		if (health <= 0)
+			Die();
+	}
+
+	public int Lives {
+		get { return lives; }
+	}
+	public void setLives(int lives) {
+		this.lives = lives;
 	}
     private bool CheckGrounded()
     {
-        return GetComponent<Rigidbody2D>().Cast(Vector2.down, new RaycastHit2D[1], 0.02f) > 0;
+		return GetComponent<Rigidbody2D> ().Cast (Vector2.down, new RaycastHit2D[1], 0.02f) > 0;
+			//TODO find platform the player is standing on and set lastPlatform to that if it's different from last time.
         //Bounds bounds = GetComponent<Collider2D>().bounds;
         //RaycastHit2D hit = Physics2D.BoxCast(bounds.center, bounds.size, 0, Vector2.down, 0.02f);
         //return grounded = hit.collider != null;
@@ -140,7 +156,14 @@ public class PlayerController : MonoBehaviour {
     private void Die()
     {
         print(name + " died!!1");
-        SceneManager.LoadScene("death screen");
+		if (lives <= 0) {
+			SceneManager.LoadScene ("death screen");
+		} else {
+			//TODO make code to respawn you on the last platform.
+			lives--;
+			health = maxhealth;
+			uiController.GetComponent<UIController> ().changeLivesIndicator ();
+		}
     }
 
     private void Shoot()
