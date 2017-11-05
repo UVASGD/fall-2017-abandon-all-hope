@@ -60,7 +60,7 @@ public class PlayerController : MonoBehaviour {
         if(old_pos == transform.position.x && prev_dir ==facing)
         {
 //            sprintFrames = 0;
-            print("still");
+//            print("still");
 			anim.enabled = false;
         }
 		if (CheckGrounded ()) {
@@ -144,9 +144,6 @@ public class PlayerController : MonoBehaviour {
 		if (grounded) {
 			PlatformID platformIDComponent = thingIHit [0].transform.gameObject.GetComponent<PlatformID> ();
 			if (platformIDComponent != null) {
-				if (lastPlatformID != platformIDComponent.platformID) {
-					print ("changing ID to " + platformIDComponent.platformID);
-				}
 				lastPlatformID = platformIDComponent.platformID;
 			}
 		}
@@ -170,7 +167,7 @@ public class PlayerController : MonoBehaviour {
 		if (lives <= 0) {
 			SceneManager.LoadScene ("death screen");
 		} else {
-			respawn ();
+			Respawn ();
 			lives--;
 			health = maxhealth;
 			uiController.GetComponent<UIController> ().changeLivesIndicator ();
@@ -185,9 +182,9 @@ public class PlayerController : MonoBehaviour {
 		shoot.PlayOneShot (shotSound);
     }
 
-	private void respawn(){
+	private void Respawn(){
 		foreach (Transform platform in platformList.transform) {
-			print ("current platform's ID: " + platform.gameObject.GetComponent<PlatformID> ().platformID);
+//			print ("current platform's ID: " + platform.gameObject.GetComponent<PlatformID> ().platformID);
 			if (platform.gameObject.GetComponent<PlatformID> ().platformID == lastPlatformID) {
 				body.position = new Vector2(platform.position.x , platform.position.y + (platform.localScale.y));
 				return;
