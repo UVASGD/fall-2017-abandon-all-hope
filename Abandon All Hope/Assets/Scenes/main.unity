@@ -11600,6 +11600,11 @@ Prefab:
       propertyPath: uiController
       value: 
       objectReference: {fileID: 1487104612}
+    - target: {fileID: 114004047547734508, guid: 7002083bd52b5eb46b1b155c4b8a2dcf,
+        type: 2}
+      propertyPath: platformList
+      value: 
+      objectReference: {fileID: 1432827944}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7002083bd52b5eb46b1b155c4b8a2dcf, type: 2}
   m_IsPrefabParent: 0

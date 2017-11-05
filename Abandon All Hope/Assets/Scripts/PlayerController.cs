@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour {
 
     int prev_dir = 1;
 
-	public GameObject lastPlatform;
+	public GameObject platformList;
+	private int lastPlatformID;
 	public float speed;
 	public float jumpspeed;
 	public float sprintspeed;
@@ -138,8 +139,18 @@ public class PlayerController : MonoBehaviour {
 	}
     private bool CheckGrounded()
     {
-		return GetComponent<Rigidbody2D> ().Cast (Vector2.down, new RaycastHit2D[1], 0.02f) > 0;
-			//TODO find platform the player is standing on and set lastPlatform to that if it's different from last time.
+		RaycastHit2D[] thingIHit = new RaycastHit2D[1];
+		bool grounded = GetComponent<Rigidbody2D> ().Cast (Vector2.down, thingIHit, 0.02f) > 0;
+		if (grounded) {
+			PlatformID platformIDComponent = thingIHit [0].transform.gameObject.GetComponent<PlatformID> ();
+			if (platformIDComponent != null) {
+				if (lastPlatformID != platformIDComponent.platformID) {
+					print ("changing ID to " + platformIDComponent.platformID);
+				}
+				lastPlatformID = platformIDComponent.platformID;
+			}
+		}
+		return grounded;
         //Bounds bounds = GetComponent<Collider2D>().bounds;
         //RaycastHit2D hit = Physics2D.BoxCast(bounds.center, bounds.size, 0, Vector2.down, 0.02f);
         //return grounded = hit.collider != null;
@@ -159,7 +170,7 @@ public class PlayerController : MonoBehaviour {
 		if (lives <= 0) {
 			SceneManager.LoadScene ("death screen");
 		} else {
-			//TODO make code to respawn you on the last platform.
+			respawn ();
 			lives--;
 			health = maxhealth;
 			uiController.GetComponent<UIController> ().changeLivesIndicator ();
@@ -173,6 +184,16 @@ public class PlayerController : MonoBehaviour {
         bullet2.Initialize(new Vector2(bulletSpeed * facing, 0), false);
 		shoot.PlayOneShot (shotSound);
     }
+
+	private void respawn(){
+		foreach (Transform platform in platformList.transform) {
+			print ("current platform's ID: " + platform.gameObject.GetComponent<PlatformID> ().platformID);
+			if (platform.gameObject.GetComponent<PlatformID> ().platformID == lastPlatformID) {
+				body.position = new Vector2(platform.position.x , platform.position.y + (platform.localScale.y));
+				return;
+			}
+		}
+	}
 }
 
 public enum DashState
