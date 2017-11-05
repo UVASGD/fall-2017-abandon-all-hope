@@ -95,7 +95,7 @@ public class EnemyConroller : MonoBehaviour {
 
     private IEnumerator HitFlash() {
         GetComponent<Renderer>().material.shader = shaderHitFlash;
-        yield return new WaitForSeconds(.1f);
+        yield return 0; // wait one frame
         GetComponent<Renderer>().material.shader = shaderSpriteDefault;
     }
 
