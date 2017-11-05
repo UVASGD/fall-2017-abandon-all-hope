@@ -187,6 +187,11 @@ public class PlayerController : MonoBehaviour {
 //			print ("current platform's ID: " + platform.gameObject.GetComponent<PlatformID> ().platformID);
 			if (platform.gameObject.GetComponent<PlatformID> ().platformID == lastPlatformID) {
 				body.position = new Vector2(platform.position.x , platform.position.y + (platform.localScale.y));
+				//TODO: respawn animation stuff
+				//	-start particle effect
+				// 	-fade in player
+				// 	-disable movement for a tiny bit? 
+				//	-invuln period?
 				return;
 			}
 		}
