@@ -88,7 +88,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1071309721959580}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 138.93, y: -3.31, z: 0}
+  m_LocalPosition: {x: -10, y: 8.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4967353461299284}
@@ -155,7 +155,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.35
+  m_LinearDrag: 0.75
   m_AngularDrag: 0
   m_GravityScale: 6.3
   m_Material: {fileID: 0}
@@ -283,7 +283,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 0.982568
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -459,15 +459,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b18fa1a355069d498717c61841cba12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  platformList: {fileID: 0}
   speed: 7
-  jumpspeed: 25
+  jumpspeed: 20
   sprintspeed: 10
-  midairaccel: 10
-  jumpVelDampen: -25
+  midairaccel: 9
+  jumpVelDampen: -5
   maxhealth: 10
+  maxLives: 3
+  uiController: {fileID: 0}
   bullet: {fileID: 114884830431885196, guid: f6a7a2877ebbe914b8580835020a0614, type: 2}
-  bulletSpeed: 15.5
-  health: 0
+  bulletSpeed: 13
   anim: {fileID: 95506709333046346}
   shotSound: {fileID: 8300000, guid: e55de949b7cce4c6b8ae074a14f094fd, type: 3}
 --- !u!124 &124717449117132376
