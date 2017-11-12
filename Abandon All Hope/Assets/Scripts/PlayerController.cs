@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour {
 	private AudioSource shoot;
 	public AudioClip shotSound;
 	private Rigidbody2D body;
+
+	public GameObject respawnFX;
 //	public Sprite idleSprite;
 //	public Sprite jumpSprite;
 //
@@ -187,8 +189,11 @@ public class PlayerController : MonoBehaviour {
 //			print ("current platform's ID: " + platform.gameObject.GetComponent<PlatformID> ().platformID);
 			if (platform.gameObject.GetComponent<PlatformID> ().platformID == lastPlatformID) {
 				body.position = new Vector2(platform.position.x , platform.position.y + (platform.localScale.y));
+				if (respawnFX) {
+        		    GameObject respawnFXOBJ = Instantiate(respawnFX, transform.position, Quaternion.identity);
+					respawnFXOBJ.transform.parent = this.transform;
+				}
 				//TODO: respawn animation stuff
-				//	-start particle effect
 				// 	-fade in player
 				// 	-disable movement for a tiny bit? 
 				//	-invuln period?

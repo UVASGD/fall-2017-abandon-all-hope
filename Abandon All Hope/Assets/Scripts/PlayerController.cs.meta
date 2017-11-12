@@ -1,10 +1,17 @@
 fileFormatVersion: 2
 guid: 3b18fa1a355069d498717c61841cba12
-timeCreated: 1492926340
+timeCreated: 1510518021
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - platformList: {instanceID: 0}
+  - uiController: {instanceID: 0}
+  - bullet: {instanceID: 0}
+  - anim: {instanceID: 0}
+  - shotSound: {instanceID: 0}
+  - respawnFX: {fileID: 1105623597097728, guid: bec6f3bb3a51ad8449e35ccac553b0e2,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

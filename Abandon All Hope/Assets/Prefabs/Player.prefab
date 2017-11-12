@@ -472,6 +472,7 @@ MonoBehaviour:
   bulletSpeed: 13
   anim: {fileID: 95506709333046346}
   shotSound: {fileID: 8300000, guid: e55de949b7cce4c6b8ae074a14f094fd, type: 3}
+  respawnFX: {fileID: 1105623597097728, guid: bec6f3bb3a51ad8449e35ccac553b0e2, type: 2}
 --- !u!124 &124717449117132376
 Behaviour:
   m_ObjectHideFlags: 1
