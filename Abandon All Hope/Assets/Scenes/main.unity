@@ -4328,7 +4328,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
@@ -4337,10 +4337,10 @@ PolygonCollider2D:
       - {x: 0.099999994, y: -0.16}
       - {x: 0.16, y: -0.16}
       - {x: 0.16, y: 0.01}
-      - {x: 0.05790247, y: -0.032869626}
-      - {x: -0.018550327, y: -0.028687088}
-      - {x: -0.113233164, y: -0.008654797}
-      - {x: -0.16, y: 0.01}
+      - {x: 0.08029286, y: -0.015683616}
+      - {x: 0.012822065, y: -0.021641709}
+      - {x: -0.11215367, y: -0.004553304}
+      - {x: -0.15045254, y: 0.030728929}
       - {x: -0.16, y: -0.16}
       - {x: 0.06, y: -0.16}
       - {x: 0.10087746, y: -0.1612099}
@@ -4404,7 +4404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de9cf68803314848b8bf7ddf11e4d64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthSound: {fileID: 0}
 --- !u!1 &1063557187
 GameObject:
   m_ObjectHideFlags: 0
