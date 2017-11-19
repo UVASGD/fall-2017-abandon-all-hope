@@ -2,29 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DeathTrap : MonoBehaviour
+public class Lava : MonoBehaviour
 {
     //private bool TouchingPlayer = false;
     // Use this for initialization
-    public AudioClip healthSound;
-    private bool used = false;
     void OnTriggerEnter2D(Collider2D other)
     {
-        AudioSource source = GetComponent<AudioSource>();
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
-        if (other.gameObject.name == "Player" && !used)
+        if (other.gameObject.name == "Player")
         {
             //TouchingPlayer = false;
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
-            if (player.Health != player.maxhealth)
-            {
-                used = true;
-                player.setHealth(player.Health + 2);
-                source.PlayOneShot(healthSound);
-                renderer.enabled = false;
-                Destroy(gameObject, healthSound.length);
+            player.setHealth(player.Health - 10);
             }
 
         }
     }
-}
