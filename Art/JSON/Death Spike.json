@@ -1,0 +1,157 @@
+{ "frames": {
+   "Death Spike 0.ase": {
+    "frame": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 500
+   },
+   "Death Spike 1.ase": {
+    "frame": { "x": 80, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 200
+   },
+   "Death Spike 2.ase": {
+    "frame": { "x": 160, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 3.ase": {
+    "frame": { "x": 240, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 4.ase": {
+    "frame": { "x": 320, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 5.ase": {
+    "frame": { "x": 400, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 6.ase": {
+    "frame": { "x": 480, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 7.ase": {
+    "frame": { "x": 560, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 8.ase": {
+    "frame": { "x": 640, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 9.ase": {
+    "frame": { "x": 720, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 10.ase": {
+    "frame": { "x": 800, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 11.ase": {
+    "frame": { "x": 880, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 500
+   },
+   "Death Spike 12.ase": {
+    "frame": { "x": 960, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 150
+   },
+   "Death Spike 13.ase": {
+    "frame": { "x": 1040, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 14.ase": {
+    "frame": { "x": 1120, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 15.ase": {
+    "frame": { "x": 1200, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 16.ase": {
+    "frame": { "x": 1280, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   },
+   "Death Spike 17.ase": {
+    "frame": { "x": 1360, "y": 0, "w": 80, "h": 85 },
+    "rotated": false,
+    "trimmed": false,
+    "spriteSourceSize": { "x": 0, "y": 0, "w": 80, "h": 85 },
+    "sourceSize": { "w": 80, "h": 85 },
+    "duration": 100
+   }
+ },
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.1.8",
+  "format": "RGBA8888",
+  "size": { "w": 1440, "h": 85 },
+  "scale": "1",
+  "frameTags": [
+   { "name": "drip", "from": 0, "to": 17, "direction": "forward" }
+  ]
+ }
+}

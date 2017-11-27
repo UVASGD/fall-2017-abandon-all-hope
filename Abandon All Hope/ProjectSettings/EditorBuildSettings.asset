@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/Scenes/death screen.unity
   - enabled: 1
     path: Assets/Scenes/win screen.unity
+  - enabled: 1
+    path: Assets/Scenes/Julian_Art.unity

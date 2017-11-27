@@ -27,7 +27,9 @@ public class EnemyConroller : MonoBehaviour {
     private Rigidbody2D body;
     public Animator anim;
     SpriteRenderer sprite;
-
+    
+    public Shader shaderSpriteDefault = Shader.Find("Sprites/Default");
+    public Shader shaderHitFlash = Shader.Find("Sprites/HitFlash");
     private int facing = LEFT;
     private float leftPosition;
     private float rightPosition;
@@ -93,6 +95,13 @@ public class EnemyConroller : MonoBehaviour {
         health -= damage;
         if (health <= 0)
             Die();
+        StartCoroutine(HitFlash());
+    }
+
+    private IEnumerator HitFlash() {
+        GetComponent<Renderer>().material.shader = shaderHitFlash;
+        yield return 0; // wait one frame
+        GetComponent<Renderer>().material.shader = shaderSpriteDefault;
     }
 
     private void Die()

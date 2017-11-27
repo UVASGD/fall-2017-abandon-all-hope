@@ -147,9 +147,11 @@ MonoBehaviour:
   power: 1
   shootCooldown: 0.5
   bullet: {fileID: 114884830431885196, guid: f6a7a2877ebbe914b8580835020a0614, type: 2}
-  bulletSpeed: 15.5
+  bulletSpeed: 10
   deathFX: {fileID: 1876064974540528, guid: a9eed5fe56e8e8d499a828957fe5dd6b, type: 2}
   anim: {fileID: 0}
+  shaderSpriteDefault: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  shaderHitFlash: {fileID: 4800000, guid: 022983dfc947807428e28571c220231e, type: 3}
 --- !u!212 &212387692615725550
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -182,6 +184,6 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bc9347a1382f12b4db6bb7f9a013622a, type: 3}
-  m_Color: {r: 0.60294116, g: 0.5497405, b: 0.5497405, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

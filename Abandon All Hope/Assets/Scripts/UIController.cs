@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class UIController : MonoBehaviour {
 
     public Slider healthbar;
+	public Text livesIndicator;
 
     private PlayerController player;
 
@@ -18,5 +19,8 @@ public class UIController : MonoBehaviour {
 	void Update () {
         healthbar.maxValue = player.maxhealth;
         healthbar.value = player.Health;
+	}
+	public void changeLivesIndicator (){
+		livesIndicator.text = player.Lives.ToString();
 	}
 }

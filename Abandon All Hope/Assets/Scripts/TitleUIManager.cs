@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class TitleUIManager : MonoBehaviour {
 
 	[Tooltip("The name of the scene that \"Play\" redirects to")]
-	public string mainScene;
+	public string mainScene = "main";
 
 	[Tooltip("The root of UI specific to the top level title screen buttons")]
 	public GameObject titleScreen;
@@ -68,7 +68,6 @@ public class TitleUIManager : MonoBehaviour {
 
     public void RestartLevel()
     {
-        //SceneManager.LoadScene("main");
-        SceneManager.LoadScene("Julian_Art");
+        SceneManager.LoadScene(mainScene);
     }
 }

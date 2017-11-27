@@ -3,19 +3,23 @@ using System.Collections.Generic;
 using UnityEngine.SceneManagement;
 using UnityEngine;
 
-public class PlayerAxisMove : MonoBehaviour {
+public class PlayerController: MonoBehaviour {
     const int LEFT = -1, RIGHT = 1;
 
     int prev_dir = 1;
 
+    public GameObject platformList;
+    private int lastPlatformID;
     public float speed;
     public float jumpspeed;
     public float sprintspeed;
     public float midairaccel;
     public float jumpVelDampen;
     public int maxhealth = 10;
+    public int maxLives = 3;
     public bool invincible = false;
     //public Vector2 jumpHeight;
+    private GameObject uiController;
 
     public BulletController bullet;
     public float bulletSpeed = 15;
@@ -23,6 +27,7 @@ public class PlayerAxisMove : MonoBehaviour {
     // private bool grounded = false;
     private int facing = 1;
     public int health;
+    private int lives;
 
     private int sprintFrames = 0;
     private int framesUntilSprint = 70;
@@ -36,10 +41,12 @@ public class PlayerAxisMove : MonoBehaviour {
     public AudioClip shotSound, jumpSound;
     private Rigidbody2D body;
     private SpriteRenderer sprite;
+    private GameObject respawnFX;
 
     // Use this for initialization
     void Start() {
         health = maxhealth;
+        lives = maxLives;
         audioSrc = GetComponent<AudioSource>();
         body = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
@@ -96,31 +103,70 @@ public class PlayerAxisMove : MonoBehaviour {
         shoot_loc.localPosition = new Vector3(facing * shoot_offx, 0, 0);
     }
 
-    public new int Health {
+    public int Health {
         get { return health; }
     }
 
-    public new void setHealth(int health) {
+    public void setHealth(int health) {
         this.health = health;
     }
+
+    public int Lives {
+        get { return lives; }
+    }
+    public void setLives(int lives) {
+        this.lives = lives;
+    }
     private bool CheckGrounded() {
-        return GetComponent<Rigidbody2D>().Cast(Vector2.down, new RaycastHit2D[1], 0.02f) > 0;
+        RaycastHit2D[] thingIHit = new RaycastHit2D[1];
+        bool grounded = GetComponent<Rigidbody2D>().Cast(Vector2.down, thingIHit, 0.02f) > 0;
+        if (grounded) {
+            PlatformID platformIDComponent = thingIHit[0].transform.gameObject.GetComponent<PlatformID>();
+            if (platformIDComponent != null) {
+                lastPlatformID = platformIDComponent.platformID;
+            }
+        }
+        return grounded;
         //Bounds bounds = GetComponent<Collider2D>().bounds;
         //RaycastHit2D hit = Physics2D.BoxCast(bounds.center, bounds.size, 0, Vector2.down, 0.02f);
         //return grounded = hit.collider != null;
     }
 
-    public new void Hit(int damage) {
+    private void Respawn() {
+        foreach (Transform platform in platformList.transform) {
+//			print ("current platform's ID: " + platform.gameObject.GetComponent<PlatformID> ().platformID);
+            if (platform.gameObject.GetComponent<PlatformID>().platformID == lastPlatformID) {
+                body.position = new Vector2(platform.position.x, platform.position.y + (platform.localScale.y));
+                if (respawnFX) {
+                    GameObject respawnFXOBJ = Instantiate(respawnFX, transform.position, Quaternion.identity);
+                    respawnFXOBJ.transform.parent = this.transform;
+                }
+                //TODO: respawn animation stuff
+                // 	-fade in player
+                // 	-disable movement for a tiny bit? 
+                //	-invuln period?
+                return;
+            }
+        }
+    }
+
+    public void Hit(int damage) {
         if (invincible) return;
-        //print(name + " hit: " + damage + " damage");
         health -= damage;
         if (health <= 0)
             Die();
     }
 
     private void Die() {
-        //print(name + " died!!1");
-        SceneManager.LoadScene("death screen");
+        print(name + " died!!1");
+        if (lives <= 0) {
+            SceneManager.LoadScene("death screen");
+        } else {
+            Respawn();
+            lives--;
+            health = maxhealth;
+            uiController.GetComponent<UIController>().changeLivesIndicator();
+        }
     }
 
     private void Shoot() {
