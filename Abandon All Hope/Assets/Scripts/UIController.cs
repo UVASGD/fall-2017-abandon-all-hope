@@ -21,6 +21,6 @@ public class UIController : MonoBehaviour {
         healthbar.value = player.Health;
 	}
 	public void changeLivesIndicator (){
-		livesIndicator.text = player.Lives.ToString();
+        livesIndicator.text = player.Lives.ToString();
 	}
 }

@@ -1,9 +1,36 @@
 fileFormatVersion: 2
 guid: 36c5f526289574e4f92584c98ede442e
-timeCreated: 1511741421
+timeCreated: 1511785663
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: AAH_Tech_0
+    21300002: AAH_Tech_1
+    21300004: AAH_Tech_2
+    21300006: AAH_Tech_3
+    21300008: AAH_Tech_4
+    21300010: AAH_Tech_5
+    21300012: AAH_Tech_6
+    21300014: AAH_Tech_7
+    21300016: AAH_Tech_8
+    21300018: AAH_Tech_9
+    21300020: AAH_Tech_10
+    21300022: AAH_Tech_11
+    21300024: AAH_Tech_12
+    21300026: AAH_Tech_13
+    21300028: AAH_Tech_14
+    21300030: AAH_Tech_15
+    21300032: AAH_Tech_16
+    21300034: AAH_Tech_17
+    21300036: AAH_Tech_18
+    21300038: AAH_Tech_19
+    21300040: AAH_Tech_20
+    21300042: AAH_Tech_21
+    21300044: AAH_Tech_22
+    21300046: AAH_Tech_23
+    21300048: AAH_Tech_24
+    21300050: AAH_Tech_25
+    21300052: AAH_Tech_26
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -27,14 +54,14 @@ TextureImporter:
   textureFormat: 1
   maxTextureSize: 2048
   textureSettings:
-    filterMode: -1
-    aniso: -1
+    filterMode: 0
+    aniso: 16
     mipBias: -1
     wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -58,9 +85,368 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 1
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: AAH_Tech_0
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 668
+        width: 111
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_1
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 669
+        width: 111
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_2
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 737
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_3
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 662
+        width: 86
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_4
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 635
+        width: 63
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_5
+      rect:
+        serializedVersion: 2
+        x: 705
+        y: 656
+        width: 69
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_6
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 709
+        width: 69
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_7
+      rect:
+        serializedVersion: 2
+        x: 881
+        y: 716
+        width: 59
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_8
+      rect:
+        serializedVersion: 2
+        x: 961
+        y: 624
+        width: 59
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_9
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 733
+        width: 263
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_10
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 667
+        width: 58
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_11
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 613
+        width: 69
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_12
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 614
+        width: 69
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_13
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 599
+        width: 134
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_14
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 599
+        width: 123
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_15
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 591
+        width: 130
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_16
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 316
+        width: 63
+        height: 293
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_17
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 284
+        width: 134
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_18
+      rect:
+        serializedVersion: 2
+        x: 1209
+        y: 284
+        width: 96
+        height: 366
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_19
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 525
+        width: 155
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_20
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 524
+        width: 153
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_21
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 316
+        width: 67
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_22
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 430
+        width: 221
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_23
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 428
+        width: 229
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_24
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 225
+        width: 277
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_25
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 220
+        width: 272
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: AAH_Tech_26
+      rect:
+        serializedVersion: 2
+        x: 637
+        y: 212
+        width: 586
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
     outline: []
   spritePackingTag: 
   userData: 
