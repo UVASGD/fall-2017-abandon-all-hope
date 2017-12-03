@@ -156,12 +156,8 @@ public class PlayerController: MonoBehaviour {
             GameObject respawnFXOBJ = Instantiate(respawnFX, transform.position, Quaternion.identity);
             respawnFXOBJ.transform.parent = this.transform;
         }
-
-        //TODO: respawn animation stuff
-        // 	-fade in player
-        // 	-disable movement for a tiny bit? //both of these are done
-
-        //	-invuln period?
+			
+      
         rspwnHitCldwn = RESPAWN_DAMAGE_COOLDOWN;
         return;
     }
@@ -173,7 +169,7 @@ public class PlayerController: MonoBehaviour {
             Die();
     }
 
-    private void Die() {
+    public void Die() {
         print(name + " died!!1");
         if (lives <= 0) {
             SceneManager.LoadScene("death screen");
