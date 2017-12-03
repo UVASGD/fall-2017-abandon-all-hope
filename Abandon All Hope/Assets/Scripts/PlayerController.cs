@@ -63,7 +63,7 @@ public class PlayerController: MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-        if (rspwnHitCldwn > 0) {
+		if (rspwnHitCldwn > 0) {
             sprite.color = new Color(1, 1, 1, 1-rspwnHitCldwn/RESPAWN_DAMAGE_COOLDOWN);
             rspwnHitCldwn -= Time.deltaTime;
         } else {
