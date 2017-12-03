@@ -13,7 +13,7 @@ public class Lava : MonoBehaviour
         {
             //TouchingPlayer = false;
             PlayerController player = other.gameObject.GetComponent<PlayerController>();
-            player.setHealth(player.Health - 10);
+            player.setHealth(player.Health - 11);
             }
 
         }

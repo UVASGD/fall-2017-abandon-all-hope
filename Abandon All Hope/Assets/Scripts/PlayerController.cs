@@ -32,7 +32,7 @@ public class PlayerController: MonoBehaviour {
     private int sprintFrames = 0;
     private int framesUntilSprint = 70;
     private int jumpTimer = 0;
-    private int jumpCooldown = 3; //number of frames before you can jump again. Used to prevent multiple jumps triggering in the space of one jump.
+    private int jumpCooldown = 60; //number of frames before you can jump again. Used to prevent multiple jumps triggering in the space of one jump.
 
     private Animator anim;
     private Transform shoot_loc;
@@ -107,7 +107,7 @@ public class PlayerController: MonoBehaviour {
         } else {
             if (Mathf.Abs(move.x) > 0) {
                 facing = move.x > 0 ? RIGHT : LEFT;
-                body.AddForce(new Vector2(midairaccel * move.x, 0));
+				body.AddForce(new Vector2(midairaccel *move.x, 0));
             }
         }
 
@@ -159,7 +159,7 @@ public class PlayerController: MonoBehaviour {
 
         //TODO: respawn animation stuff
         // 	-fade in player
-        // 	-disable movement for a tiny bit? 
+        // 	-disable movement for a tiny bit? //both of these are done
 
         //	-invuln period?
         rspwnHitCldwn = RESPAWN_DAMAGE_COOLDOWN;
