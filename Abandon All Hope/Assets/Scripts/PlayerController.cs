@@ -112,7 +112,7 @@ public class PlayerController: MonoBehaviour {
         }
 
         if (jumpTimer > 0) jumpTimer--;
-        if (!CheckGrounded() && body.position.y < -25)
+        if (!CheckGrounded() && body.position.y < -30)
             Die();
 
         prev_dir = facing;
