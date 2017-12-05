@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class EndOfLevelController : MonoBehaviour {
 
+
+
+	public string levelToLoad = "test1";
+
 	//private bool TouchingPlayer = false;
 	// Use this for initialization
 	void Start () {
+		
 
 	}
 
@@ -23,10 +28,11 @@ public class EndOfLevelController : MonoBehaviour {
 	{
 		if (other.gameObject.name == "Player")
 		{
+			print ("aasdf");
 			//PlayerController player = other.gameObject.GetComponent<PlayerController>();
 			//player.setHealth (player.Health + 10); //resets player health for next level
-			SceneManager.LoadScene("win screen");
-			Destroy (this.gameObject);
+			Application.LoadLevel(levelToLoad);
+			//Destroy (this.gameObject);
 		}
 	}
 }
