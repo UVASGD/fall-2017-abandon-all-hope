@@ -13168,6 +13168,10 @@ Prefab:
       propertyPath: m_Name
       value: Rock_Platform_Long_1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1805745026661878, guid: d79b66333699038468f2fe8e6520c1f2, type: 2}
+      propertyPath: m_TagString
+      value: Platform
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d79b66333699038468f2fe8e6520c1f2, type: 2}
   m_IsPrefabParent: 0
@@ -13802,6 +13806,10 @@ Prefab:
     - target: {fileID: 1805745026661878, guid: d79b66333699038468f2fe8e6520c1f2, type: 2}
       propertyPath: m_Name
       value: Rock_Platform_Long_1 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805745026661878, guid: d79b66333699038468f2fe8e6520c1f2, type: 2}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d79b66333699038468f2fe8e6520c1f2, type: 2}
