@@ -17,11 +17,17 @@ public class EnemyConroller : MonoBehaviour {
     public int maxHealth = 5;
     public int power = 1;
     public float shootCooldown = 1;
+    private Transform shoot_loc;
+    private float shoot_offx;
 
     public BulletController bullet;
     public float bulletSpeed = 4;
-
+    private GameObject player;
     public GameObject deathFX;
+    private Rigidbody2D body;
+    public Animator anim;
+    SpriteRenderer sprite;
+    
     public Shader shaderSpriteDefault = Shader.Find("Sprites/Default");
     public Shader shaderHitFlash = Shader.Find("Sprites/HitFlash");
     private int facing = LEFT;
@@ -36,42 +42,41 @@ public class EnemyConroller : MonoBehaviour {
         health = maxHealth;
         rightPosition = transform.position.x;
         leftPosition = rightPosition - walkRange;
+        player = GameObject.Find("Player");
+        body = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+        shoot_loc = transform.FindChild("Shoot_Loc");
+        shoot_offx = shoot_loc.localPosition.x;
     }
-
     // Update is called once per frame
-    void Update () {
-        Rigidbody2D body = GetComponent<Rigidbody2D>();
-        GameObject player = GameObject.Find("Player");
+    void Update() {
+
         shootTimer -= Time.deltaTime;
-        if (shootTimer <= 0 && InShootRange(player))
-        {
+        if (shootTimer <= 0 && InShootRange(player)) {
             Shoot();
             shootTimer = shootCooldown;
         }
-        if (followPlayer && DetectPlayer(player))
-        {
+        if (followPlayer && DetectPlayer(player)) {
             waiting = false;
             body.AddForce(Vector2.right * facing * speed);
-        }
-        else if (!stationary)
-        {
-            if (!waiting)
-            {
-                if (body.position.x >= rightPosition && facing == RIGHT || 
-                    body.position.x <= leftPosition && facing == LEFT)
-                {
+        } else if (!stationary) {
+            if (!waiting) {
+                if (body.position.x >= rightPosition && facing == RIGHT ||
+                    body.position.x <= leftPosition && facing == LEFT) {
                     StartCoroutine(WaitAndChangeDirection(pause));
-                }
-                else
-                {
+                } else {
                     body.AddForce(Vector2.right * facing * speed);
                     //body.velocity = Vector2.right * facing * speed;
                 }
             }
         }
-        SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+
+        sprite = GetComponent<SpriteRenderer>();
         sprite.flipX = facing == LEFT;
+        anim.SetBool("Moving", Mathf.Abs(body.velocity.x) > 0);
+        shoot_loc.localPosition = new Vector3(facing * shoot_offx, 0, 0);
     }
+
 
     IEnumerator WaitAndChangeDirection(float seconds)
     {
@@ -128,8 +133,7 @@ public class EnemyConroller : MonoBehaviour {
         return disp.x * facing >= 0 && disp.sqrMagnitude <= visionRange * visionRange;
     }
 
-    private bool InShootRange(GameObject player)
-    {
+    private bool InShootRange(GameObject player) {
         Vector3 disp = player.transform.position - transform.position;
         disp.x *= facing;
         return disp.x >= 0 && disp.x <= shootRange.x && Mathf.Abs(disp.y) <= shootRange.y;
@@ -137,7 +141,8 @@ public class EnemyConroller : MonoBehaviour {
 
     private void Shoot()
     {
-        Vector3 position = transform.position + new Vector3(.7f * facing, 0f);
+        anim.SetTrigger("Shoot");
+        Vector2 position = shoot_loc.position;
         BulletController bullet2 = Instantiate(bullet, position, Quaternion.identity);
         bullet2.Initialize(new Vector2(bulletSpeed * facing, 0), true);
     }

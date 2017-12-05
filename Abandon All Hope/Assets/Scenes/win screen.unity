@@ -302,9 +302,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c0f73086b4b1d41a853038d2b3170f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainScene: 
+  mainScene: Julian_Art
   titleScreen: {fileID: 0}
   controlsScreen: {fileID: 0}
+  creditsScreen: {fileID: 0}
 --- !u!4 &904958693
 Transform:
   m_ObjectHideFlags: 0
@@ -684,9 +685,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 5b701ea9e3eea144e805dfba327ec3ed, type: 3}
+  m_audioClip: {fileID: 8300000, guid: accc9d6930c57834bbcde8e4123d90db, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.62
   m_Pitch: 1
   Loop: 0
   Mute: 0
