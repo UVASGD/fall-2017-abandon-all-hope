@@ -96,7 +96,7 @@ public class PlayerController: MonoBehaviour {
                 body.velocity = new Vector2(0, body.velocity.y);
             }
 
-            if (move.y > 0 && jumpTimer == 0) {
+			if (move.y > 0 && jumpTimer == 0) {
                 sprintFrames = 0;
                 jumpTimer = jumpCooldown;
                 body.AddForce(new Vector2(0, jumpspeed), ForceMode2D.Impulse);
@@ -140,7 +140,7 @@ public class PlayerController: MonoBehaviour {
         bool grounded = GetComponent<Rigidbody2D>().Cast(Vector2.down, thingIHit, 0.02f) > 0;
         if (grounded) {
             string tag = thingIHit[0].transform.gameObject.tag;
-            if (tag.Equals("Platform")) {
+			if (tag.Equals("Platform") ) {
                 lastPlatform = thingIHit[0].transform;
             }
         }
