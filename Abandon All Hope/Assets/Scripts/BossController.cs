@@ -117,7 +117,7 @@ public class BossController : MonoBehaviour {
 		if (deathFX) {
 			GameObject deathFXOBJ = Instantiate(deathFX, transform.position, Quaternion.identity);
 			Destroy(deathFXOBJ, deathFXOBJ.GetComponent<ParticleSystem>().startLifetime);
-			SceneManager.LoadScene ("winscreen");
+			SceneManager.LoadScene ("win screen");
 		}
 		Destroy(gameObject);
 	}

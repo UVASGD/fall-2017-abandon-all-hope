@@ -1160,7 +1160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c0f73086b4b1d41a853038d2b3170f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainScene: main
+  mainScene: Julian_Art
   titleScreen: {fileID: 1073266574}
   controlsScreen: {fileID: 1377385625}
   creditsScreen: {fileID: 711504582}
@@ -2260,7 +2260,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "\nDESIGNERS\nSusannah Jones (and Programming)\nMin-soo Choi\r\n\nMUSIC:\nLuke
     Masters\nKevin Qi(SoundFX)\n\nARTISTS:\nJulian McClinton (and Sound/Music/Programming)\nTina
-    Pham\nMatthew Han\nMarina Kun\nJustin Jones\n\n"
+    Pham\nMatthew Han\nMarina Kun\n\n"
 --- !u!222 &2098420234
 CanvasRenderer:
   m_ObjectHideFlags: 0

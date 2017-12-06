@@ -7,7 +7,7 @@ public class EndOfLevelController : MonoBehaviour {
 
 
 
-	public string levelToLoad = "test1";
+	public string levelToLoad = "Boss2";
 
 	//private bool TouchingPlayer = false;
 	// Use this for initialization

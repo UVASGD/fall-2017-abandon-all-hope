@@ -8399,7 +8399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fd69b26cb0054e1c9e794fba44f4cc3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelToLoad: test1
+  levelToLoad: Boss2
 --- !u!61 &913239683
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20165,11 +20165,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4963479279072754, guid: 7002083bd52b5eb46b1b155c4b8a2dcf, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -19.46
+      value: -20.6
       objectReference: {fileID: 0}
     - target: {fileID: 4963479279072754, guid: 7002083bd52b5eb46b1b155c4b8a2dcf, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 9.36
+      value: 9.7
       objectReference: {fileID: 0}
     - target: {fileID: 4963479279072754, guid: 7002083bd52b5eb46b1b155c4b8a2dcf, type: 2}
       propertyPath: m_LocalPosition.z
