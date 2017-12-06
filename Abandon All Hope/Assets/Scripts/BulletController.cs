@@ -41,6 +41,11 @@ public class BulletController : MonoBehaviour {
             EnemyConroller enemy = other.gameObject.GetComponent<EnemyConroller>();
             enemy.Hit(power);
         }
+		else if (!isBad && other.gameObject.CompareTag("Boss"))
+		{
+			BossController boss = other.gameObject.GetComponent<BossController>();
+			boss.Hit(power);
+		}
 		Destroy (this.gameObject);
 	}
 
