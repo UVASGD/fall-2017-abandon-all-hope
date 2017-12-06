@@ -911,51 +911,22 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 11
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
-    m_MaxSize: 40
-    m_Alignment: 1
+    m_MaxSize: 117
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '
-
-    Director:
-
-    Charles Crum
-
-
-    Programmers:
-
-    Ryan McCampbell
-
-    Matt Vick
-
-    Nicholas Taylor
-
-    Angel Lam
-
-    Steven Richards
-
-    Grant Oxer
-
-    James Mekavibul
-
-    Laith Hasanian
-
-    Lauren Phan
-
-    Cherokee Toole
-
-    Winston Liu
-
-
-
-'
+  m_Text: "\nPROGRAMMMERS                          \nRyan McCampbell                  \nNathaniel
+    Saxe\r\nMatt Vick\nJeffrey Wang (and Design/Art)\nAnnie Phongphouthai\r\nTiffany
+    Chin Loy\r\nSimmy Bhatia\r\nJustin Hazrati\r\nNicholas Taylor\nAngel Lam\nSteven
+    Richards\nGrant Oxer\nJames Mekavibul\nLaith Hasanian\nLauren Phan\nCherokee Toole\nWinston
+    Liu\n\n\n"
 --- !u!222 &1158683770
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2005,7 +1976,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 679f6f4bc661c624fbd8c2f3b974646b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2198,36 +2169,21 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 14
+    m_FontSize: 11
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 1
     m_MaxSize: 40
-    m_Alignment: 1
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
-    m_HorizontalOverflow: 0
+    m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: '
-
-    Designer:
-
-    Susannah Jones
-
-
-    Music:
-
-    Luke Masters
-
-
-    Artists:
-
-    Tina Pham
-
-    Matthew Han
-
-'
+  m_Text: "\nDESIGNERS\nSusannah Jones (and Programming)\nMin-soo Choi\r\nDavid Crowder\r\nSkylar
+    Spears\r\nkatharine xie\n\nMUSIC:\nLuke Masters\nKevin Qi(SoundFX)\n\nARTISTS:\nJulian
+    McClinton (and Sound/Music/Programming)\nTina Pham\nMatthew Han\nMarina Kun\nJustin
+    Jones\n\n"
 --- !u!222 &2098420234
 CanvasRenderer:
   m_ObjectHideFlags: 0
